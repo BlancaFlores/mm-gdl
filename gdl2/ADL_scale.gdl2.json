@@ -31,42 +31,6 @@
   },
   "definition": {
     "data_bindings": {
-      "gt0002": {
-        "id": "gt0002",
-        "model_id": "openEHR-EHR-OBSERVATION.katz_activity_of_daily_living.v0",
-        "template_id": "openEHR-EHR-OBSERVATION.katz_activity_of_daily_living.v0",
-        "type": "INPUT",
-        "elements": {
-          "gt0003": {
-            "id": "gt0003",
-            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0007]"
-          },
-          "gt0004": {
-            "id": "gt0004",
-            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0010]"
-          },
-          "gt0005": {
-            "id": "gt0005",
-            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0013]"
-          },
-          "gt0006": {
-            "id": "gt0006",
-            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0016]"
-          },
-          "gt0007": {
-            "id": "gt0007",
-            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0019]"
-          },
-          "gt0008": {
-            "id": "gt0008",
-            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
-          },
-          "gt0028": {
-            "id": "gt0028",
-            "path": "/data/events/time"
-          }
-        }
-      },
       "gt0013": {
         "id": "gt0013",
         "model_id": "openEHR-EHR-OBSERVATION.adl_score.v0",
@@ -102,6 +66,42 @@
             "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0010]"
           }
         }
+      },
+      "gt0032": {
+        "id": "gt0032",
+        "model_id": "openEHR-EHR-OBSERVATION.katz_adl_scale.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.katz_adl_scale.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0033": {
+            "id": "gt0033",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0007]"
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0010]"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0013]"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0016]"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0019]"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "path": "/data/events/time"
+          }
+        }
       }
     },
     "rules": {
@@ -129,7 +129,7 @@
         "id": "gt0012",
         "priority": 7,
         "when": [
-          "$gt0003|Bathing|==1|local::at0009|Bathes self completely or needs help in bathing only a single part of the body such as the back, genital area or disabled extremity. |"
+          "$gt0033|Bathing|==1|local::at0009|Bathes self completely or needs help in bathing only a single part of the body such as the back, genital area or disabled extremity. |"
         ],
         "then": [
           "$gt0014|Bathing points|=1"
@@ -139,7 +139,7 @@
         "id": "gt0023",
         "priority": 6,
         "when": [
-          "$gt0004|Dressing|==1|local::at0012|Gets clothes from closets and drawers and puts on clothes and outer garments complete with fasteners. May have help tying shoes.|"
+          "$gt0034|Dressing|==1|local::at0012|Gets clothes from closets and drawers and puts on clothes and outer garments complete with fasteners. May have help tying shoes.|"
         ],
         "then": [
           "$gt0015|Dressing points|=1"
@@ -149,7 +149,7 @@
         "id": "gt0024",
         "priority": 5,
         "when": [
-          "$gt0005|Toileting|==1|local::at0015|Goes to toilet, gets on and off, arranges clothes, cleans genital area without help.|"
+          "$gt0035|Toileting|==1|local::at0015|Goes to toilet, gets on and off, arranges clothes, cleans genital area without help.|"
         ],
         "then": [
           "$gt0016|Toileting points|=1"
@@ -159,7 +159,7 @@
         "id": "gt0027",
         "priority": 4,
         "when": [
-          "$gt0008|Feeding|==1|local::at0006|Gets food from plate into mouth without help. Preparation of food may be done by another person.|"
+          "$gt0038|Feeding|==1|local::at0006|Gets food from plate into mouth without help. Preparation of food may be done by another person.|"
         ],
         "then": [
           "$gt0019|Feeding points|=1"
@@ -169,7 +169,7 @@
         "id": "gt0025",
         "priority": 3,
         "when": [
-          "$gt0006|Transferring|==1|local::at0018|Moves in and out of bed or chair unassisted. Mechanical transferring aides are acceptable.|"
+          "$gt0036|Transferring|==1|local::at0018|Moves in and out of bed or chair unassisted. Mechanical transferring aides are acceptable.|"
         ],
         "then": [
           "$gt0017|Transferring points|=1"
@@ -179,7 +179,7 @@
         "id": "gt0026",
         "priority": 2,
         "when": [
-          "$gt0007|Continence|==1|local::at0021|Exercises complete self control over urination and defecation. |"
+          "$gt0037|Continence|==1|local::at0021|Exercises complete self control over urination and defecation. |"
         ],
         "then": [
           "$gt0018|Continence points|=1"
@@ -189,12 +189,12 @@
         "id": "gt0030",
         "priority": 1,
         "when": [
-          "$gt0003|Bathing|!=null",
-          "$gt0004|Dressing|!=null",
-          "$gt0005|Toileting|!=null",
-          "$gt0006|Transferring|!=null",
-          "$gt0007|Continence|!=null",
-          "$gt0008|Feeding|!=null"
+          "$gt0033|Bathing|!=null",
+          "$gt0034|Dressing|!=null",
+          "$gt0035|Toileting|!=null",
+          "$gt0036|Transferring|!=null",
+          "$gt0037|Continence|!=null",
+          "$gt0038|Feeding|!=null"
         ],
         "then": [
           "$gt0020|Total ADL score|.magnitude=$gt0014+$gt0015+$gt0016+$gt0017+$gt0018+$gt0019"
@@ -212,49 +212,9 @@
             "text": "ADL_scale",
             "description": "The Katz Activity of Daily Living (ADL) scale assesses the level of independency in elderly, based on six items (bathing, dressing, toileting, transferring, continence and feeding). The score for each item ranges from 0 (unable to perform the activity) to 1 (able to perform the activity). The total ADL score ranges from 0 (completely dependent) to 6 (completely independent)."
           },
-          "gt0003": {
-            "id": "gt0003",
-            "text": "Bathing",
-            "description": "*"
-          },
-          "gt0004": {
-            "id": "gt0004",
-            "text": "Dressing",
-            "description": "*"
-          },
-          "gt0005": {
-            "id": "gt0005",
-            "text": "Toileting",
-            "description": "*"
-          },
-          "gt0006": {
-            "id": "gt0006",
-            "text": "Transferring",
-            "description": "*"
-          },
-          "gt0007": {
-            "id": "gt0007",
-            "text": "Continence",
-            "description": "*"
-          },
-          "gt0008": {
-            "id": "gt0008",
-            "text": "Feeding",
-            "description": "*"
-          },
-          "gt0009": {
-            "id": "gt0009",
-            "text": "Total score",
-            "description": "*"
-          },
-          "gt0011": {
-            "id": "gt0011",
-            "text": "Total score",
-            "description": "*"
-          },
           "gt0012": {
             "id": "gt0012",
-            "text": "Bathing score"
+            "text": "Bathing points"
           },
           "gt0014": {
             "id": "gt0014",
@@ -301,23 +261,23 @@
           },
           "gt0023": {
             "id": "gt0023",
-            "text": "Dressing score"
+            "text": "Dressing points"
           },
           "gt0024": {
             "id": "gt0024",
-            "text": "Toileting score"
+            "text": "Toileting points"
           },
           "gt0025": {
             "id": "gt0025",
-            "text": "Transferring score"
+            "text": "Transferring points"
           },
           "gt0026": {
             "id": "gt0026",
-            "text": "Continence score"
+            "text": "Continence points"
           },
           "gt0027": {
             "id": "gt0027",
-            "text": "Feeding score"
+            "text": "Feeding points"
           },
           "gt0028": {
             "id": "gt0028",
@@ -331,6 +291,54 @@
           "gt0030": {
             "id": "gt0030",
             "text": "Calculate ADL score"
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "Bathing",
+            "description": "*"
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "Dressing",
+            "description": "*"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "Toileting",
+            "description": "*"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "Transferring",
+            "description": "*"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "Continence",
+            "description": "*"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "Feeding",
+            "description": "*"
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "Event time",
+            "description": "The exact time of a single timed event during the Observation. Can represent either a specific point-in-time or an interval event."
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "Copy of Set default"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "Assign ADL score"
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "Total ADL score",
+            "description": "*"
           }
         }
       }

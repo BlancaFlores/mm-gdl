@@ -7,14 +7,18 @@ language
 	original_language = <[ISO_639-1::en]>
 description
 	original_author = <
-		["name"] = <"">
+		["name"] = <"Blanca Flores">
+		["email"] = <"blanca.flores@med.uni-heidelberg.de">
+		["organisation"] = <"Heidelberg University">
+		["date"] = <"2019-07-30">
 	>
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To assess functional status as a measurement of elder´s ability to perform activities of daily living independently. ">
-			use = <"">
-			misuse = <"">
+			purpose = <"To assess the level of independency in elderly based on six items (bathing, dressing, toileting, transferring, continence and feeding), as an ability measure to perform activities of daily living. ">
+			use = <"Use to record the functional status in elderly and calculate a total ADL score, ranging from 0 (completely dependent) to 6 (completely independent).">
+			keywords = <"geriatric assessment", "ADL scale">
+			misuse = <"Do not use to record activities of daily living other than the specified by the Katz ADL scale. ">
 			copyright = <"">
 		>
 	>
@@ -22,6 +26,7 @@ description
 	other_contributors = <>
 	other_details = <
 		["MD5-CAM-1.0.1"] = <"52CD08B308EA57832958B5C6C0D443FE">
+		["references"] = <"Katz S., Ford AB, Moskowitz RW, et al. Studies of Illness in the Aged. The Index of ADL: A Standardized Measure of Biological and Psychosocial Function. JAMA: 1963; 185(12):914-919. ">
 	>
 
 definition
