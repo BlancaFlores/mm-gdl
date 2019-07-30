@@ -1,0 +1,509 @@
+(GUIDE) <
+	gdl_version = <"0.1">
+	id = <"CCI_score">
+	concept = <"gt0001">
+	language = (LANGUAGE) <
+		original_language = <[ISO_639-1::en]>
+	>
+	description = (RESOURCE_DESCRIPTION) <
+		details = <
+			["en"] = (RESOURCE_DESCRIPTION_ITEM) <
+				keywords = <"CCI", "comorbidities">
+			>
+		>
+		original_author = <
+			["date"] = <"25.04.2019">
+			["email"] = <"blanca.flores@med.uni-heidelberg.de">
+			["name"] = <"Blanca Flores ">
+			["organisation"] = <"Institute of Medical Biometry and Informatics">
+		>
+		other_details = <
+			["references"] = <"Charlson et al. (1987) A new method of classifying prognostic comorbidity in longitudinal studies: development and validation.">
+		>
+	>
+	definition = (GUIDE_DEFINITION) <
+		archetype_bindings = <
+			["gt0002"] = (ARCHETYPE_BINDING) <
+				archetype_id = <"openEHR-EHR-OBSERVATION.charlson_comorbidity_index.v0">
+				domain = <"EHR">
+				elements = <
+					["gt0003"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0006]">
+					>
+					["gt0004"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0009]">
+					>
+					["gt0009"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0012]">
+					>
+					["gt0010"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0013]">
+					>
+					["gt0011"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0016]">
+					>
+					["gt0012"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0019]">
+					>
+					["gt0013"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0020]">
+					>
+					["gt0014"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0021]">
+					>
+					["gt0015"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0022]">
+					>
+					["gt0016"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0030]">
+					>
+					["gt0017"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0031]">
+					>
+					["gt0018"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0034]">
+					>
+					["gt0019"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0037]">
+					>
+					["gt0020"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0040]">
+					>
+					["gt0021"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0043]">
+					>
+					["gt0022"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0044]">
+					>
+					["gt0023"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0047]">
+					>
+					["gt0024"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0050]">
+					>
+					["gt0025"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0053]">
+					>
+				>
+			>
+			["gt0026"] = (ARCHETYPE_BINDING) <
+				archetype_id = <"openEHR-EHR-OBSERVATION.cci_score.v0">
+				domain = <"CDS">
+				elements = <
+					["gt0027"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+					>
+					["gt0028"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0005]">
+					>
+					["gt0029"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0006]">
+					>
+					["gt0030"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0007]">
+					>
+					["gt0031"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0008]">
+					>
+					["gt0032"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0009]">
+					>
+					["gt0033"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0010]">
+					>
+					["gt0034"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0011]">
+					>
+					["gt0035"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0012]">
+					>
+					["gt0036"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0013]">
+					>
+					["gt0037"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0014]">
+					>
+					["gt0038"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0015]">
+					>
+					["gt0039"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0016]">
+					>
+					["gt0040"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0017]">
+					>
+					["gt0041"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0018]">
+					>
+					["gt0042"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0019]">
+					>
+					["gt0044"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0020]">
+					>
+					["gt0045"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0022]">
+					>
+					["gt0046"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0023]">
+					>
+					["gt0048"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0021]">
+					>
+				>
+			>
+		>
+		rules = <
+			["gt0047"] = (RULE) <
+				when = <"$gt0048==null", "$gt0045==null", "$gt0044==null", "$gt0042==null", "$gt0041==null", "$gt0040==null", "$gt0039==null", "$gt0038==null", "$gt0037==null", "$gt0036==null", "$gt0035==null", "$gt0034==null", "$gt0033==null", "$gt0032==null", "$gt0031==null", "$gt0030==null", "$gt0029==null", "$gt0028==null", "$gt0027==null">
+				then = <"$gt0041=0", "$gt0048=0", "$gt0045=0", "$gt0044=0", "$gt0042=0", "$gt0040=0", "$gt0039=0", "$gt0038=0", "$gt0037=0", "$gt0036=0", "$gt0035=0", "$gt0034=0", "$gt0033=0", "$gt0032=0", "$gt0031=0", "$gt0030=0", "$gt0029=0", "$gt0028=0", "$gt0027=0">
+				priority = <21>
+			>
+			["gt0049"] = (RULE) <
+				when = <"$gt0003==1|local::at0008|Present|",...>
+				then = <"$gt0027=1",...>
+				priority = <20>
+			>
+			["gt0050"] = (RULE) <
+				then = <"$gt0046.magnitude=(((((((((((((((((($gt0027.magnitude+$gt0028.magnitude)+$gt0029.magnitude)+$gt0030.magnitude)+$gt0031.magnitude)+$gt0032.magnitude)+$gt0033.magnitude)+$gt0034.magnitude)+$gt0035.magnitude)+$gt0036.magnitude)+$gt0037.magnitude)+$gt0038.magnitude)+$gt0039.magnitude)+$gt0040.magnitude)+$gt0041.magnitude)+$gt0042.magnitude)+$gt0044.magnitude)+$gt0048.magnitude)+$gt0045.magnitude)",...>
+				priority = <1>
+			>
+			["gt0051"] = (RULE) <
+				when = <"$gt0004==1|local::at0011|Present|",...>
+				then = <"$gt0028=1",...>
+				priority = <19>
+			>
+			["gt0052"] = (RULE) <
+				when = <"$gt0009==1|local::at0061|Present|",...>
+				then = <"$gt0029=1",...>
+				priority = <17>
+			>
+			["gt0053"] = (RULE) <
+				when = <"$gt0010==1|local::at0015|Present|",...>
+				then = <"$gt0030=1",...>
+				priority = <18>
+			>
+			["gt0054"] = (RULE) <
+				when = <"$gt0011==1|local::at0018|Present|",...>
+				then = <"$gt0031=1",...>
+				priority = <15>
+			>
+			["gt0055"] = (RULE) <
+				when = <"$gt0012==1|local::at0024|Present|",...>
+				then = <"$gt0032=1",...>
+				priority = <16>
+			>
+			["gt0056"] = (RULE) <
+				when = <"$gt0013==1|local::at0026|Present|",...>
+				then = <"$gt0033=1",...>
+				priority = <14>
+			>
+			["gt0057"] = (RULE) <
+				when = <"$gt0014==1|local::at0028|Present|",...>
+				then = <"$gt0034=1",...>
+				priority = <13>
+			>
+			["gt0058"] = (RULE) <
+				when = <"$gt0015==1|local::at0059|Present|",...>
+				then = <"$gt0035=1",...>
+				priority = <12>
+			>
+			["gt0059"] = (RULE) <
+				when = <"$gt0016==1|local::at0058|Present|",...>
+				then = <"$gt0036=1",...>
+				priority = <11>
+			>
+			["gt0060"] = (RULE) <
+				when = <"$gt0017==2|local::at0033|Present|",...>
+				then = <"$gt0037=2",...>
+				priority = <10>
+			>
+			["gt0061"] = (RULE) <
+				when = <"$gt0018==2|local::at0036|Present|",...>
+				then = <"$gt0038=2",...>
+				priority = <9>
+			>
+			["gt0062"] = (RULE) <
+				when = <"$gt0019==2|local::at0039|Present|",...>
+				then = <"$gt0039=2",...>
+				priority = <8>
+			>
+			["gt0063"] = (RULE) <
+				when = <"$gt0020==2|local::at0042|Present|",...>
+				then = <"$gt0040=2",...>
+				priority = <7>
+			>
+			["gt0064"] = (RULE) <
+				when = <"$gt0021==2|local::at0063|Present|",...>
+				then = <"$gt0041=2",...>
+				priority = <6>
+			>
+			["gt0065"] = (RULE) <
+				when = <"$gt0022==2|local::at0046|Present|",...>
+				then = <"$gt0042=2",...>
+				priority = <5>
+			>
+			["gt0066"] = (RULE) <
+				when = <"$gt0023==3|local::at0049|Present|",...>
+				then = <"$gt0044=3",...>
+				priority = <4>
+			>
+			["gt0067"] = (RULE) <
+				when = <"$gt0024==6|local::at0052|Present|",...>
+				then = <"$gt0048=6",...>
+				priority = <3>
+			>
+			["gt0068"] = (RULE) <
+				when = <"$gt0025==6|local::at0056|Present|",...>
+				then = <"$gt0045=6",...>
+				priority = <2>
+			>
+		>
+	>
+	ontology = (GUIDE_ONTOLOGY) <
+		term_definitions = <
+			["en"] = (TERM_DEFINITION) <
+				terms = <
+					["gt0001"] = (TERM) <
+						text = <"CCI_score">
+						description = <"The Charlson Comorbidity Index estimates the number and the severity of comorbidities, including nineteen diseases with a score varying from 1 to 6 for each of them, in accordance to their severity. The final CCI score can range from 0 to 37. ">
+					>
+					["gt0003"] = (TERM) <
+						text = <"Myocardial infarction">
+						description = <"Myocardial infarction (history, not ECG changes only)">
+					>
+					["gt0004"] = (TERM) <
+						text = <"Congestive heart failure">
+						description = <"Congestive heart failure">
+					>
+					["gt0005"] = (TERM) <
+						text = <"Myocardial infarction presence">
+					>
+					["gt0007"] = (TERM) <
+						text = <"Myocardial infarction">
+						description = <"Myocardial infarction (history, not ECG changes only)">
+					>
+					["gt0008"] = (TERM) <
+						text = <"Total score">
+						description = <"*">
+					>
+					["gt0009"] = (TERM) <
+						text = <"Peripheral disease">
+						description = <"Peripheral disease (includes aortic aneurysm >= 6)">
+					>
+					["gt0010"] = (TERM) <
+						text = <"Cerebrovascular disease: CVA with mild or no residua or TIA">
+						description = <"Cerebrovascular disease: CVA with mild or no residua or TIA">
+					>
+					["gt0011"] = (TERM) <
+						text = <"Dementia">
+						description = <"Dementia">
+					>
+					["gt0012"] = (TERM) <
+						text = <"Chronic pulmonary disease">
+						description = <"Chronic pulmonary disease">
+					>
+					["gt0013"] = (TERM) <
+						text = <"Connective tissue disease">
+						description = <"Connective tissue disease">
+					>
+					["gt0014"] = (TERM) <
+						text = <"Peptic ulcer disease">
+						description = <"Peptic ulcer disease">
+					>
+					["gt0015"] = (TERM) <
+						text = <"Mild liver disease">
+						description = <"Mild liver diesease (without portal hypertension, includes chronic hepatitis)">
+					>
+					["gt0016"] = (TERM) <
+						text = <"Diabetes without end-organ damage ">
+						description = <"Diabetes without end-organ damage (excludes diet-controlled alone)">
+					>
+					["gt0017"] = (TERM) <
+						text = <"Hemiplegia">
+						description = <"Hemiplegia">
+					>
+					["gt0018"] = (TERM) <
+						text = <"Moderate or severe renal disease">
+						description = <"Moderate or severe renal disease">
+					>
+					["gt0019"] = (TERM) <
+						text = <"Diabetes with end-organ damage">
+						description = <"Diabetes with end-organ damage (retinopathy, neuropathy, nephropathy or brittle diabetes)">
+					>
+					["gt0020"] = (TERM) <
+						text = <"Tumor without metastasis">
+						description = <"Tumor without metastasis (exclude if > 5 y from diagnosis)">
+					>
+					["gt0021"] = (TERM) <
+						text = <"Leukemia ">
+						description = <"Leukemia (acute or chronic)">
+					>
+					["gt0022"] = (TERM) <
+						text = <"Lymphoma">
+						description = <"Lymphoma">
+					>
+					["gt0023"] = (TERM) <
+						text = <"Moderate or severe liver disease">
+						description = <"Moderate or severe liver disease">
+					>
+					["gt0024"] = (TERM) <
+						text = <"Metastatic solid tumor">
+						description = <"Metastatic solid tumor">
+					>
+					["gt0025"] = (TERM) <
+						text = <"AIDS">
+						description = <"AIDS (not just HIV positive)">
+					>
+					["gt0027"] = (TERM) <
+						text = <"Myocardial infarction">
+						description = <"(history, not ECG changes only)">
+					>
+					["gt0028"] = (TERM) <
+						text = <"Congestive heart failure">
+						description = <"*">
+					>
+					["gt0029"] = (TERM) <
+						text = <"Peripheral disease">
+						description = <"Includes aortic aneurysm >= 6cm">
+					>
+					["gt0030"] = (TERM) <
+						text = <"Cerebrovascular disease">
+						description = <"*">
+					>
+					["gt0031"] = (TERM) <
+						text = <"Dementia">
+						description = <"*">
+					>
+					["gt0032"] = (TERM) <
+						text = <"Chronic pulmonary disease">
+						description = <"*">
+					>
+					["gt0033"] = (TERM) <
+						text = <"Connective tissue disease">
+						description = <"*">
+					>
+					["gt0034"] = (TERM) <
+						text = <"Peptic ulcer disease">
+						description = <"*">
+					>
+					["gt0035"] = (TERM) <
+						text = <"Mild liver disease">
+						description = <"*">
+					>
+					["gt0036"] = (TERM) <
+						text = <"Diabetes without end-organ damage">
+						description = <"*">
+					>
+					["gt0037"] = (TERM) <
+						text = <"Hemiplegia">
+						description = <"*">
+					>
+					["gt0038"] = (TERM) <
+						text = <"Moderate or severe renal disease">
+						description = <"*">
+					>
+					["gt0039"] = (TERM) <
+						text = <"Diabetes with end-organ damage ">
+						description = <"*">
+					>
+					["gt0040"] = (TERM) <
+						text = <"Tumor without metastasis">
+						description = <"*">
+					>
+					["gt0041"] = (TERM) <
+						text = <"Leukemia">
+						description = <"*">
+					>
+					["gt0042"] = (TERM) <
+						text = <"Lymphoma">
+						description = <"*">
+					>
+					["gt0043"] = (TERM) <
+						text = <"Moderate or severe liver disease">
+						description = <"*">
+					>
+					["gt0044"] = (TERM) <
+						text = <"Moderate or severe liver disease">
+						description = <"*">
+					>
+					["gt0045"] = (TERM) <
+						text = <"AIDS">
+						description = <"*">
+					>
+					["gt0046"] = (TERM) <
+						text = <"Total CCI score">
+						description = <"*">
+					>
+					["gt0047"] = (TERM) <
+						text = <"Set default">
+					>
+					["gt0048"] = (TERM) <
+						text = <"Metastatic solid tumor">
+						description = <"*">
+					>
+					["gt0049"] = (TERM) <
+						text = <"Myocardial infarction">
+					>
+					["gt0050"] = (TERM) <
+						text = <"CCI total score">
+					>
+					["gt0051"] = (TERM) <
+						text = <"Congestive heart failure">
+					>
+					["gt0052"] = (TERM) <
+						text = <"Peripheral disease">
+					>
+					["gt0053"] = (TERM) <
+						text = <"Cerebrovascular disease">
+					>
+					["gt0054"] = (TERM) <
+						text = <"Dementia">
+					>
+					["gt0055"] = (TERM) <
+						text = <"Chronic pulmonary disease">
+					>
+					["gt0056"] = (TERM) <
+						text = <"Connective tissue disease">
+					>
+					["gt0057"] = (TERM) <
+						text = <"Peptic ulcer disease">
+					>
+					["gt0058"] = (TERM) <
+						text = <"Mild liver disease">
+					>
+					["gt0059"] = (TERM) <
+						text = <"Diabetes without end-organ damage">
+					>
+					["gt0060"] = (TERM) <
+						text = <"Hemiplegia">
+					>
+					["gt0061"] = (TERM) <
+						text = <"Moderate or severe renal disease">
+					>
+					["gt0062"] = (TERM) <
+						text = <"Diabetes with end-organ damage">
+					>
+					["gt0063"] = (TERM) <
+						text = <"Tumor without metastasis">
+					>
+					["gt0064"] = (TERM) <
+						text = <"Leukemia">
+					>
+					["gt0065"] = (TERM) <
+						text = <"Lymphoma">
+					>
+					["gt0066"] = (TERM) <
+						text = <"Moderate or severe liver disease">
+					>
+					["gt0067"] = (TERM) <
+						text = <"Metastatic solid tumor">
+					>
+					["gt0068"] = (TERM) <
+						text = <"AIDS">
+					>
+				>
+			>
+		>
+	>
+>

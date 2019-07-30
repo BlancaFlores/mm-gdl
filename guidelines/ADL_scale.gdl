@@ -1,0 +1,217 @@
+(GUIDE) <
+	gdl_version = <"0.1">
+	id = <"ADL_scale">
+	concept = <"gt0001">
+	language = (LANGUAGE) <
+		original_language = <[ISO_639-1::en]>
+	>
+	description = (RESOURCE_DESCRIPTION) <
+		details = <
+			["en"] = (RESOURCE_DESCRIPTION_ITEM) <
+				keywords = <"Geriatric assessment", "ADL scale">
+				purpose = <"">
+			>
+		>
+		original_author = <
+			["date"] = <"25.04.2019">
+			["email"] = <"blanca.flores@med.uni-heidelberg.de">
+			["name"] = <"Blanca Flores">
+			["organisation"] = <"Institute of Medical Biometry and Informatics">
+		>
+		other_details = <
+			["references"] = <"Katz S., Ford AB, Moskowitz RW, et al. Studies of Illness in the Aged. The Index of ADL: A Standardized Measure of Biological and Psychosocial Function. JAMA: 1963; 185(12):914-919. ">
+		>
+	>
+	definition = (GUIDE_DEFINITION) <
+		archetype_bindings = <
+			["gt0002"] = (ARCHETYPE_BINDING) <
+				archetype_id = <"openEHR-EHR-OBSERVATION.katz_activity_of_daily_living.v0">
+				domain = <"EHR">
+				elements = <
+					["gt0003"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0007]">
+					>
+					["gt0004"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0010]">
+					>
+					["gt0005"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0013]">
+					>
+					["gt0006"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0016]">
+					>
+					["gt0007"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0019]">
+					>
+					["gt0008"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+					>
+				>
+			>
+			["gt0013"] = (ARCHETYPE_BINDING) <
+				archetype_id = <"openEHR-EHR-OBSERVATION.adl_score.v0">
+				domain = <"CDS">
+				elements = <
+					["gt0014"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+					>
+					["gt0015"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0005]">
+					>
+					["gt0016"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0006]">
+					>
+					["gt0017"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0009]">
+					>
+					["gt0018"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0007]">
+					>
+					["gt0019"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0008]">
+					>
+					["gt0020"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0010]">
+					>
+				>
+			>
+		>
+		rules = <
+			["gt0012"] = (RULE) <
+				when = <"$gt0003==1|local::at0009|Bathes self completely or needs help in bathing only a single part of the body such as the back, genital area or disabled extremity. |",...>
+				then = <"$gt0014=1",...>
+				priority = <7>
+			>
+			["gt0021"] = (RULE) <
+				when = <"$gt0019==null", "$gt0018==null", "$gt0017==null", "$gt0016==null", "$gt0015==null", "$gt0014==null">
+				then = <"$gt0019=0", "$gt0018=0", "$gt0017=0", "$gt0016=0", "$gt0015=0", "$gt0014=0">
+				priority = <8>
+			>
+			["gt0022"] = (RULE) <
+				then = <"$gt0020.magnitude=((((($gt0014.magnitude+$gt0015.magnitude)+$gt0016.magnitude)+$gt0017.magnitude)+$gt0018.magnitude)+$gt0019.magnitude)",...>
+				priority = <1>
+			>
+			["gt0023"] = (RULE) <
+				when = <"$gt0004==1|local::at0012|Gets clothes from closets and drawers and puts on clothes and outer garments complete with fasteners. May have help tying shoes.|",...>
+				then = <"$gt0015=1",...>
+				priority = <6>
+			>
+			["gt0024"] = (RULE) <
+				when = <"$gt0005==1|local::at0015|Goes to toilet, gets on and off, arranges clothes, cleans genital area without help.|",...>
+				then = <"$gt0016=1",...>
+				priority = <5>
+			>
+			["gt0025"] = (RULE) <
+				when = <"$gt0006==1|local::at0018|Moves in and out of bed or chair unassisted. Mechanical transferring aides are acceptable.|",...>
+				then = <"$gt0017=1",...>
+				priority = <4>
+			>
+			["gt0026"] = (RULE) <
+				when = <"$gt0007==1|local::at0021|Exercises complete self control over urination and defecation. |",...>
+				then = <"$gt0018=1",...>
+				priority = <3>
+			>
+			["gt0027"] = (RULE) <
+				when = <"$gt0008==1|local::at0006|Gets food from plate into mouth without help. Preparation of food may be done by another person.|",...>
+				then = <"$gt0019=1",...>
+				priority = <2>
+			>
+		>
+	>
+	ontology = (GUIDE_ONTOLOGY) <
+		term_definitions = <
+			["en"] = (TERM_DEFINITION) <
+				terms = <
+					["gt0001"] = (TERM) <
+						text = <"ADL_scale">
+						description = <"The Katz Activity of Daily Living (ADL) scale assesses the level of independency in old adults, based on six items (bathing, dressing, toileting, transferring, continence and feeding). The score for each item ranges from 0 (unable to perform the activity) to 1 (able to perform the activity). The total ADL score ranges from 0 (completely dependent) to 6 (completely independent).">
+					>
+					["gt0003"] = (TERM) <
+						text = <"Bathing">
+						description = <"*">
+					>
+					["gt0004"] = (TERM) <
+						text = <"Dressing">
+						description = <"*">
+					>
+					["gt0005"] = (TERM) <
+						text = <"Toileting">
+						description = <"*">
+					>
+					["gt0006"] = (TERM) <
+						text = <"Transferring">
+						description = <"*">
+					>
+					["gt0007"] = (TERM) <
+						text = <"Continence">
+						description = <"*">
+					>
+					["gt0008"] = (TERM) <
+						text = <"Feeding">
+						description = <"*">
+					>
+					["gt0009"] = (TERM) <
+						text = <"Total score">
+						description = <"*">
+					>
+					["gt0011"] = (TERM) <
+						text = <"Total score">
+						description = <"*">
+					>
+					["gt0012"] = (TERM) <
+						text = <"Bathing score">
+					>
+					["gt0014"] = (TERM) <
+						text = <"Bathing score">
+						description = <"*">
+					>
+					["gt0015"] = (TERM) <
+						text = <"Dressing score">
+						description = <"*">
+					>
+					["gt0016"] = (TERM) <
+						text = <"Toileting score">
+						description = <"*">
+					>
+					["gt0017"] = (TERM) <
+						text = <"Transferring score">
+						description = <"*">
+					>
+					["gt0018"] = (TERM) <
+						text = <"Continence score">
+						description = <"*">
+					>
+					["gt0019"] = (TERM) <
+						text = <"Feeding score">
+						description = <"*">
+					>
+					["gt0020"] = (TERM) <
+						text = <"Total ADL score">
+						description = <"*">
+					>
+					["gt0021"] = (TERM) <
+						text = <"Set default">
+					>
+					["gt0022"] = (TERM) <
+						text = <"Calculate ADL score">
+					>
+					["gt0023"] = (TERM) <
+						text = <"Dressing score">
+					>
+					["gt0024"] = (TERM) <
+						text = <"Toileting score">
+					>
+					["gt0025"] = (TERM) <
+						text = <"Transferring score">
+					>
+					["gt0026"] = (TERM) <
+						text = <"Continence score">
+					>
+					["gt0027"] = (TERM) <
+						text = <"Feeding score">
+					>
+				>
+			>
+		>
+	>
+>

@@ -1,0 +1,423 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.charlson_comorbidity_index.v0
+
+concept
+	[at0000]	-- Charlson comorbidity index
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To estimate risk of death from comorbid diseases. ">
+			use = <"To estimate the number and the severity of comorbidities, including nineteen diseases">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"M. E. Charlson, P. Pompei, K. L. Ales, and C. R. MacKenzie, “A new method of classifying prognostic comorbidity in longitudinal studies: Development and validation,” J. Chronic Dis., 1987.
+
+A. Palumbo et al., “Geriatric assessment predicts survival and toxicities in elderly myeloma patients: An International Myeloma Working Group report,” Blood, vol. 13, pp. 2068–2074, 2015.">
+		["MD5-CAM-1.0.1"] = <"0E8F0CBCD8B6A318472A61987AEB013F">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Charlson comorbidity index
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0006] occurrences matches {0..1} matches {	-- Myocardial infarction
+										value matches {
+											0|[local::at0007], 	-- Absent
+											1|[local::at0008]  	-- Present
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {	-- Congestive heart failure
+										value matches {
+											0|[local::at0010], 	-- Absent
+											1|[local::at0011]  	-- Present
+										}
+									}
+									ELEMENT[at0012] occurrences matches {0..1} matches {	-- Peripheral disease
+										value matches {
+											0|[local::at0060], 	-- Absent
+											1|[local::at0061]  	-- Present
+										}
+									}
+									ELEMENT[at0013] occurrences matches {0..1} matches {	-- Cerebrovascular disease: CVA with mild or no residua or TIA
+										value matches {
+											0|[local::at0014], 	-- Absent
+											1|[local::at0015]  	-- Present
+										}
+									}
+									ELEMENT[at0016] occurrences matches {0..1} matches {	-- Dementia
+										value matches {
+											0|[local::at0017], 	-- Absent
+											1|[local::at0018]  	-- Present
+										}
+									}
+									ELEMENT[at0019] occurrences matches {0..1} matches {	-- Chronic pulmonary disease
+										value matches {
+											0|[local::at0023], 	-- Absent
+											1|[local::at0024]  	-- Present
+										}
+									}
+									ELEMENT[at0020] occurrences matches {0..1} matches {	-- Connective tissue disease
+										value matches {
+											0|[local::at0025], 	-- Absent
+											1|[local::at0026]  	-- Present
+										}
+									}
+									ELEMENT[at0021] occurrences matches {0..1} matches {	-- Peptic ulcer disease
+										value matches {
+											0|[local::at0027], 	-- Absent
+											1|[local::at0028]  	-- Present
+										}
+									}
+									ELEMENT[at0022] occurrences matches {0..1} matches {	-- Mild liver disease
+										value matches {
+											0|[local::at0029], 	-- Absent
+											1|[local::at0059]  	-- Present
+										}
+									}
+									ELEMENT[at0030] occurrences matches {0..1} matches {	-- Diabetes without end-organ damage 
+										value matches {
+											0|[local::at0057], 	-- Absent
+											1|[local::at0058]  	-- Present
+										}
+									}
+									ELEMENT[at0031] occurrences matches {0..1} matches {	-- Hemiplegia
+										value matches {
+											0|[local::at0032], 	-- Absent
+											2|[local::at0033]  	-- Present
+										}
+									}
+									ELEMENT[at0034] occurrences matches {0..1} matches {	-- Moderate or severe renal disease
+										value matches {
+											0|[local::at0035], 	-- Absent
+											2|[local::at0036]  	-- Present
+										}
+									}
+									ELEMENT[at0037] occurrences matches {0..1} matches {	-- Diabetes with end-organ damage
+										value matches {
+											0|[local::at0038], 	-- Absent
+											2|[local::at0039]  	-- Present
+										}
+									}
+									ELEMENT[at0040] occurrences matches {0..1} matches {	-- Tumor without metastasis
+										value matches {
+											0|[local::at0041], 	-- Absent
+											2|[local::at0042]  	-- Present
+										}
+									}
+									ELEMENT[at0043] occurrences matches {0..1} matches {	-- Leukemia 
+										value matches {
+											0|[local::at0062], 	-- Absent
+											2|[local::at0063]  	-- Present
+										}
+									}
+									ELEMENT[at0044] occurrences matches {0..1} matches {	-- Lymphoma
+										value matches {
+											0|[local::at0045], 	-- Absent
+											2|[local::at0046]  	-- Present
+										}
+									}
+									ELEMENT[at0047] occurrences matches {0..1} matches {	-- Moderate or severe liver disease
+										value matches {
+											0|[local::at0048], 	-- Absent
+											3|[local::at0049]  	-- Present
+										}
+									}
+									ELEMENT[at0050] occurrences matches {0..1} matches {	-- Metastatic solid tumor
+										value matches {
+											0|[local::at0051], 	-- Absent
+											6|[local::at0052]  	-- Present
+										}
+									}
+									ELEMENT[at0053] occurrences matches {0..1} matches {	-- AIDS
+										value matches {
+											0|[local::at0055], 	-- Absent
+											6|[local::at0056]  	-- Present
+										}
+									}
+									ELEMENT[at0054] occurrences matches {0..1} matches {	-- Total score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..37|}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Charlson comorbidity index">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0006"] = <
+					text = <"Myocardial infarction">
+					description = <"Myocardial infarction (history, not ECG changes only)">
+				>
+				["at0007"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Congestive heart failure">
+					description = <"Congestive heart failure">
+				>
+				["at0010"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Peripheral disease">
+					description = <"Peripheral disease (includes aortic aneurysm >= 6)">
+				>
+				["at0013"] = <
+					text = <"Cerebrovascular disease: CVA with mild or no residua or TIA">
+					description = <"Cerebrovascular disease: CVA with mild or no residua or TIA">
+				>
+				["at0014"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Dementia">
+					description = <"Dementia">
+				>
+				["at0017"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Chronic pulmonary disease">
+					description = <"Chronic pulmonary disease">
+				>
+				["at0020"] = <
+					text = <"Connective tissue disease">
+					description = <"Connective tissue disease">
+				>
+				["at0021"] = <
+					text = <"Peptic ulcer disease">
+					description = <"Peptic ulcer disease">
+				>
+				["at0022"] = <
+					text = <"Mild liver disease">
+					description = <"Mild liver diesease (without portal hypertension, includes chronic hepatitis)">
+				>
+				["at0023"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Diabetes without end-organ damage ">
+					description = <"Diabetes without end-organ damage (excludes diet-controlled alone)">
+				>
+				["at0031"] = <
+					text = <"Hemiplegia">
+					description = <"Hemiplegia">
+				>
+				["at0032"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Moderate or severe renal disease">
+					description = <"Moderate or severe renal disease">
+				>
+				["at0035"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Diabetes with end-organ damage">
+					description = <"Diabetes with end-organ damage (retinopathy, neuropathy, nephropathy or brittle diabetes)">
+				>
+				["at0038"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Tumor without metastasis">
+					description = <"Tumor without metastasis (exclude if > 5 y from diagnosis)">
+				>
+				["at0041"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"Leukemia ">
+					description = <"Leukemia (acute or chronic)">
+				>
+				["at0044"] = <
+					text = <"Lymphoma">
+					description = <"Lymphoma">
+				>
+				["at0045"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"Moderate or severe liver disease">
+					description = <"Moderate or severe liver disease">
+				>
+				["at0048"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Metastatic solid tumor">
+					description = <"Metastatic solid tumor">
+				>
+				["at0051"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"AIDS">
+					description = <"AIDS (not just HIV positive)">
+				>
+				["at0054"] = <
+					text = <"Total score">
+					description = <"*">
+				>
+				["at0055"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0059"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0062"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0063"] = <
+					text = <"Present">
+					description = <"*">
+				>
+			>
+		>
+	>

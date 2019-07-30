@@ -1,0 +1,166 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.iadl_scale.v0
+
+concept
+	[at0000]	-- Iadl scale
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"424BB85E93B91C4FC11A1078D32EAFB8">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Iadl scale
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Ability to use telephone score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..1|}
+											}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Shopping score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..1|}
+											}
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {	-- Food preparation score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..1|}
+											}
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {	-- House keeping score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..1|}
+											}
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {	-- Laundry score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..1|}
+											}
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {	-- Mode of Transportation score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..1|}
+											}
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {	-- Responsibility for Own Medications score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..1|}
+											}
+										}
+									}
+									ELEMENT[at0011] occurrences matches {0..1} matches {	-- Ability to Handle Finances score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..1|}
+											}
+										}
+									}
+									ELEMENT[at0012] occurrences matches {0..1} matches {	-- Total IADL score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..8|}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Iadl scale">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Ability to use telephone score">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Shopping score">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Food preparation score">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"House keeping score">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Laundry score">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Mode of Transportation score">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Responsibility for Own Medications score">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Ability to Handle Finances score">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Total IADL score">
+					description = <"*">
+				>
+			>
+		>
+	>

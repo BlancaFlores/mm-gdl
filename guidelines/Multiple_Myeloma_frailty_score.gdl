@@ -1,0 +1,368 @@
+(GUIDE) <
+	gdl_version = <"0.1">
+	id = <"Multiple_Myeloma_frailty_score">
+	concept = <"gt0001">
+	language = (LANGUAGE) <
+		original_language = <[ISO_639-1::en]>
+	>
+	description = (RESOURCE_DESCRIPTION) <
+		details = <
+			["en"] = (RESOURCE_DESCRIPTION_ITEM) <
+			>
+		>
+	>
+	definition = (GUIDE_DEFINITION) <
+		archetype_bindings = <
+			["gt0002"] = (ARCHETYPE_BINDING) <
+				archetype_id = <"openEHR-EHR-OBSERVATION.katz_activity_of_daily_living.v0">
+				domain = <"EHR">
+				elements = <
+					["gt0003"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0007]">
+					>
+					["gt0004"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0010]">
+					>
+					["gt0005"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0013]">
+					>
+					["gt0006"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0016]">
+					>
+					["gt0007"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0019]">
+					>
+					["gt0008"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+					>
+				>
+			>
+			["gt0043"] = (ARCHETYPE_BINDING) <
+				archetype_id = <"openEHR-EHR-OBSERVATION.frailty_score_multiple_myeloma.v0">
+				domain = <"CDS">
+				elements = <
+					["gt0044"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+					>
+					["gt0045"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0013]">
+					>
+					["gt0046"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0016]">
+					>
+					["gt0047"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0019]">
+					>
+					["gt0048"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0022]">
+					>
+					["gt0049"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0026]">
+					>
+				>
+			>
+			["gt0053"] = (ARCHETYPE_BINDING) <
+				archetype_id = <"openEHR-EHR-OBSERVATION.katz_activity_of_daily_living.v0">
+				domain = <"CDS">
+				elements = <
+					["gt0054"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0022]">
+					>
+				>
+			>
+			["gt0064"] = (ARCHETYPE_BINDING) <
+				archetype_id = <"openEHR-EHR-OBSERVATION.katz_activity_of_daily_living.v0">
+				domain = <"CDS">
+				elements = <
+					["gt0065"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0007]">
+					>
+					["gt0067"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+					>
+					["gt0072"] = (ELEMENT_BINDING) <
+						path = <"/data[at0001]/events[at0002]/data[at0003]/items[at0010]">
+					>
+				>
+			>
+		>
+		rules = <
+			["gt0061"] = (RULE) <
+				when = <"$gt0003==1|local::at0009|Bathes self completely or needs help in bathing only a single part of the body such as the back, genital area or disabled extremity. |",...>
+				then = <"$gt0065.value=1",...>
+				priority = <5>
+			>
+			["gt0069"] = (RULE) <
+				when = <"$gt0067==null", "$gt0065==null">
+				then = <"$gt0067.value=0", "$gt0065.value=0", "$gt0054=0">
+				priority = <4>
+			>
+			["gt0070"] = (RULE) <
+				when = <"$gt0008==1|local::at0006|Gets food from plate into mouth without help. Preparation of food may be done by another person.|",...>
+				then = <"$gt0067.value=1",...>
+				priority = <3>
+			>
+			["gt0071"] = (RULE) <
+				then = <"$gt0054.magnitude=(($gt0065.value+$gt0067.value)+$gt0072.value)",...>
+				priority = <2>
+			>
+			["gt0073"] = (RULE) <
+				when = <"$gt0004==1|local::at0012|Gets clothes from closets and drawers and puts on clothes and outer garments complete with fasteners. May have help tying shoes.|",...>
+				then = <"$gt0072.value=1",...>
+				priority = <1>
+			>
+		>
+	>
+	ontology = (GUIDE_ONTOLOGY) <
+		term_definitions = <
+			["en"] = (TERM_DEFINITION) <
+				terms = <
+					["gt0001"] = (TERM) <
+					>
+					["gt0003"] = (TERM) <
+						text = <"Bathing">
+						description = <"*">
+					>
+					["gt0004"] = (TERM) <
+						text = <"Dressing">
+						description = <"*">
+					>
+					["gt0005"] = (TERM) <
+						text = <"Toileting">
+						description = <"*">
+					>
+					["gt0006"] = (TERM) <
+						text = <"Transferring">
+						description = <"*">
+					>
+					["gt0007"] = (TERM) <
+						text = <"Continence">
+						description = <"*">
+					>
+					["gt0008"] = (TERM) <
+						text = <"Feeding">
+						description = <"*">
+					>
+					["gt0009"] = (TERM) <
+						text = <"ADL_Total_score">
+						description = <"*">
+					>
+					["gt0011"] = (TERM) <
+						text = <"Ability to Use Telephone">
+						description = <"*">
+					>
+					["gt0012"] = (TERM) <
+						text = <"Shopping">
+						description = <"*">
+					>
+					["gt0013"] = (TERM) <
+						text = <"Food Preparation">
+						description = <"*">
+					>
+					["gt0014"] = (TERM) <
+						text = <"Housekeeping">
+						description = <"*">
+					>
+					["gt0015"] = (TERM) <
+						text = <"Laundry">
+						description = <"*">
+					>
+					["gt0016"] = (TERM) <
+						text = <"Mode of Transportation">
+						description = <"*">
+					>
+					["gt0017"] = (TERM) <
+						text = <"Responsibility for Own Medications">
+						description = <"*">
+					>
+					["gt0018"] = (TERM) <
+						text = <"Ability to Handle Finances">
+						description = <"*">
+					>
+					["gt0019"] = (TERM) <
+						text = <"IADL_Total_score">
+						description = <"*">
+					>
+					["gt0021"] = (TERM) <
+						text = <"Myocardial infarction">
+						description = <"Myocardial infarction (history, not ECG changes only)">
+					>
+					["gt0022"] = (TERM) <
+						text = <"Congestive heart failure">
+						description = <"Congestive heart failure">
+					>
+					["gt0023"] = (TERM) <
+						text = <"Peripheral disease">
+						description = <"Peripheral disease (includes aortic aneurysm >= 6)">
+					>
+					["gt0024"] = (TERM) <
+						text = <"Cerebrovascular disease: CVA with mild or no residua or TIA">
+						description = <"Cerebrovascular disease: CVA with mild or no residua or TIA">
+					>
+					["gt0025"] = (TERM) <
+						text = <"Dementia">
+						description = <"Dementia">
+					>
+					["gt0026"] = (TERM) <
+						text = <"Chronic pulmonary disease">
+						description = <"Chronic pulmonary disease">
+					>
+					["gt0027"] = (TERM) <
+						text = <"Dementia">
+						description = <"Dementia">
+					>
+					["gt0028"] = (TERM) <
+						text = <"Peptic ulcer disease">
+						description = <"Peptic ulcer disease">
+					>
+					["gt0029"] = (TERM) <
+						text = <"Mild liver disease">
+						description = <"Mild liver diesease (without portal hypertension, includes chronic hepatitis)">
+					>
+					["gt0030"] = (TERM) <
+						text = <"Diabetes without end-organ damage ">
+						description = <"Diabetes without end-organ damage (excludes diet-controlled alone)">
+					>
+					["gt0031"] = (TERM) <
+						text = <"Hemiplegia">
+						description = <"Hemiplegia">
+					>
+					["gt0032"] = (TERM) <
+						text = <"Moderate or severe renal disease">
+						description = <"Moderate or severe renal disease">
+					>
+					["gt0033"] = (TERM) <
+						text = <"Diabetes with end-organ damage">
+						description = <"Diabetes with end-organ damage (retinopathy, neuropathy, nephropathy or brittle diabetes)">
+					>
+					["gt0034"] = (TERM) <
+						text = <"Tumor without metastasis">
+						description = <"Tumor without metastasis (exclude if > 5 y from diagnosis)">
+					>
+					["gt0035"] = (TERM) <
+						text = <"Leukemia ">
+						description = <"Leukemia (acute or chronic)">
+					>
+					["gt0036"] = (TERM) <
+						text = <"Lymphoma">
+						description = <"Lymphoma">
+					>
+					["gt0037"] = (TERM) <
+						text = <"Moderate or severe liver disease">
+						description = <"Moderate or severe liver disease">
+					>
+					["gt0038"] = (TERM) <
+						text = <"Diabetes with end-organ damage">
+						description = <"Diabetes with end-organ damage (retinopathy, neuropathy, nephropathy or brittle diabetes)">
+					>
+					["gt0039"] = (TERM) <
+						text = <"Moderate or severe liver disease">
+						description = <"Moderate or severe liver disease">
+					>
+					["gt0040"] = (TERM) <
+						text = <"Metastatic solid tumor">
+						description = <"Metastatic solid tumor">
+					>
+					["gt0041"] = (TERM) <
+						text = <"AIDS">
+						description = <"AIDS (not just HIV positive)">
+					>
+					["gt0042"] = (TERM) <
+						text = <"CCI Total score">
+						description = <"*">
+					>
+					["gt0044"] = (TERM) <
+						text = <"Age">
+						description = <"*">
+					>
+					["gt0045"] = (TERM) <
+						text = <"ADL">
+						description = <"Katz Activity of Daily Living">
+					>
+					["gt0046"] = (TERM) <
+						text = <"IADL">
+						description = <"Lawton Instrumental Activity of Daily Living (IADL)">
+					>
+					["gt0047"] = (TERM) <
+						text = <"CCI">
+						description = <"Charlson Comorbidity Index (CCI)">
+					>
+					["gt0048"] = (TERM) <
+						text = <"Patient status">
+						description = <"*">
+					>
+					["gt0049"] = (TERM) <
+						text = <"Total score">
+						description = <"*">
+					>
+					["gt0050"] = (TERM) <
+						text = <"Calculate Frailty score">
+					>
+					["gt0051"] = (TERM) <
+						text = <"Patient age">
+					>
+					["gt0052"] = (TERM) <
+						text = <"Score">
+					>
+					["gt0054"] = (TERM) <
+						text = <"ADL_score">
+						description = <"*">
+					>
+					["gt0055"] = (TERM) <
+						text = <"Total score">
+					>
+					["gt0057"] = (TERM) <
+						text = <"IADL_score">
+						description = <"*">
+					>
+					["gt0059"] = (TERM) <
+						text = <"CCI_score">
+						description = <"*">
+					>
+					["gt0060"] = (TERM) <
+						text = <"ADL_score">
+					>
+					["gt0061"] = (TERM) <
+						text = <"ADL_Bathing">
+					>
+					["gt0062"] = (TERM) <
+						text = <"ADL_Dressing">
+					>
+					["gt0063"] = (TERM) <
+						text = <"total score">
+					>
+					["gt0065"] = (TERM) <
+						text = <"Bathing">
+						description = <"*">
+					>
+					["gt0066"] = (TERM) <
+						text = <"ADL_Feeding">
+					>
+					["gt0067"] = (TERM) <
+						text = <"Feeding">
+						description = <"*">
+					>
+					["gt0068"] = (TERM) <
+						text = <"ADL_default">
+					>
+					["gt0069"] = (TERM) <
+						text = <"ADL_default">
+					>
+					["gt0070"] = (TERM) <
+						text = <"ADL_Feeding">
+					>
+					["gt0071"] = (TERM) <
+						text = <"ADL_score">
+					>
+					["gt0072"] = (TERM) <
+						text = <"Dressing">
+						description = <"*">
+					>
+					["gt0073"] = (TERM) <
+						text = <"ADL_Dressing">
+					>
+				>
+			>
+		>
+	>
+>
