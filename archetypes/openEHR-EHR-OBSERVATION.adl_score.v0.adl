@@ -21,7 +21,7 @@ description
 	lifecycle_state = <"0">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"B1FCA4DCF0A499D5C6A326EDD6CBEE8A">
+		["MD5-CAM-1.0.1"] = <"1424EDAA013AE442A762028A89718304">
 	>
 
 definition
@@ -33,7 +33,7 @@ definition
 						data matches {
 							ITEM_TREE[at0003] matches {	-- Tree
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Bathing score
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Bathing points
 										value matches {
 											DV_COUNT matches {
 												magnitude matches {|0..1|}
@@ -112,7 +112,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"Bathing score">
+					text = <"Bathing points">
 					description = <"*">
 				>
 				["at0005"] = <
