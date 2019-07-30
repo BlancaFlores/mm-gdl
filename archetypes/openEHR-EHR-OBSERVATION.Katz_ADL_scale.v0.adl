@@ -1,5 +1,5 @@
 archetype (adl_version=1.4)
-	openEHR-EHR-OBSERVATION.katz_activity_of_daily_living.v0
+	openEHR-EHR-OBSERVATION.katz_adl_scale.v0
 
 concept
 	[at0000]	-- Katz ADL scale
@@ -21,7 +21,7 @@ description
 	lifecycle_state = <"0">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"2F932E3A93187F0C3F52A8FFFE74034B">
+		["MD5-CAM-1.0.1"] = <"52CD08B308EA57832958B5C6C0D443FE">
 	>
 
 definition
