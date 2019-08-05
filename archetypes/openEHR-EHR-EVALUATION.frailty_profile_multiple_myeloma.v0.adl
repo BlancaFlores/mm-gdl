@@ -1,0 +1,167 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-EVALUATION.frailty_profile_multiple_myeloma.v0
+
+concept
+	[at0000]	-- Frailty profile multiple myeloma
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Blanca Flores">
+		["email"] = <"blanca.flores@med.uni-heidelberg.de">
+		["organisation"] = <"Heidelberg University">
+		["date"] = <"2019-04-15">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To calculate the frailty profile in multiple myeloma elderly patients, after ADL, IADL, CCI and age have been assessed, and determine the feasibility of a treatment regimen.">
+			use = <"Use to record the frailty profile in multiple myeloma elderly patients, based on ADL, IADL, CCI and age assessments. The IMWG proposed to use the frailty profile as an additional tool for clinical evaluation in clinical practice , as well as for the measurement of frailty in designing future clinical trials to ensure adequate representation of elderly patients.">
+			keywords = <"geriatric assessment", "frailty", "multiple myeloma", "elderly patients">
+			misuse = <"Do not use to record the frailty score for patients who are diagnosed with a disease other than multiple myeloma, or for non-elderly patients. ">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"B6D7F4C518F6C7A5070265EBA99FB2DF">
+		["references"] = <"A. Palumbo et al., “Geriatric assessment predicts survival and toxicities in elderly myeloma patients: An International Myeloma Working Group report,” Blood, vol. 13, pp. 2068–2074, 2015.">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- Frailty profile multiple myeloma
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Age score
+						value matches {
+							0|[local::at0003], 	-- 75 or under
+							1|[local::at0004], 	-- 76 - 80
+							2|[local::at0006]  	-- Above 80
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {	-- ADL score
+						value matches {
+							0|[local::at0007], 	-- > 4
+							1|[local::at0009]  	-- <= 4
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {	-- IADL score
+						value matches {
+							0|[local::at0018], 	-- > 5
+							1|[local::at0019]  	-- <= 5
+						}
+					}
+					ELEMENT[at0010] occurrences matches {0..1} matches {	-- CCI score
+						value matches {
+							0|[local::at0011], 	-- <= 1
+							1|[local::at0012]  	-- >= 2
+						}
+					}
+					ELEMENT[at0013] occurrences matches {0..1} matches {	-- Frailty score
+						value matches {
+							DV_COUNT matches {
+								magnitude matches {|0..5|}
+							}
+						}
+					}
+					ELEMENT[at0014] occurrences matches {0..1} matches {	-- Patient status
+						value matches {
+							0|[local::at0015], 	-- Fit
+							1|[local::at0016], 	-- Intermediate fitness
+							2|[local::at0017]  	-- Frail
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Frailty profile multiple myeloma">
+					description = <"The International Myeloma Working group (IMWG) proposed a frailty score in 2015, to predict mortality and risk of toxicity in elderly multiple myeloma patients. It relies on patient age and the resulting scores from three validated assessment tools: the Katz Activities of Daily Living scale (ADL), the Lawton Instrumental Activies of Daily Living (IADL) scale and the Charlson Comorbidity Index (CCI). The frailty score was built combining age, ADL, IADL and CCI, evaluating their prognostic role on overall-survival. The frailty score ranges from 0-5 points, and is used to define the frailty profile in elderly patients, which corresponds to 3 risk groups: fit, intermediate fitness or frail. The 3-year overall survival was 84% in fit, 76% in intermediate-fitness and 57% in frail.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Age score">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"75 or under">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"76 - 80">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"ADL score">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Above 80">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"> 4">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"IADL score">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"<= 4">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"CCI score">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"<= 1">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <">= 2">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Frailty score">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Patient status">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Fit">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Intermediate fitness">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Frail">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"> 5">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"<= 5">
+					description = <"*">
+				>
+			>
+		>
+	>
