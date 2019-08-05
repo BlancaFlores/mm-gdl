@@ -1,0 +1,303 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.lawton_iadl_scale.v0
+
+concept
+	[at0000]	-- Lawton instrumental activity daily living
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Blanca Flores">
+		["email"] = <"blanca.flores@med.uni-heidelberg.de">
+		["organisation"] = <"Heidelberg University">
+		["date"] = <"2019-04-25">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To assess independent living skills in elderly for 8 domains of function: telephone, shopping, food preparation, housekeeping, laundry, transportation mode, medications and handling finances. It may be used as a baseline assessment tool to identify improvement or deterioration in living skills over time. ">
+			use = <"Use to record the assessment of independent living skills in elderly, who are in community, clinic or hospital settings, and calculate a summary score. ">
+			keywords = <"elderly", "geriatric assessment", "IADL scale">
+			misuse = <"Do not use to assess independent living skills in non-elderly or in elderly institutionalized adults. ">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"40158EE43B16FF2F0F318CD748131438">
+		["references"] = <"Coyne R, Kluwer W. (2019). The Lawton Instrumental Activities of Daily Living (IADL) Scale. Hartford Institute for Geriatric Nursing, (23), New York.
+Lawton MP, Brody EM. (1969). Assessment of older people: self-maintaining and instrumental activities of daily living. Gerontologist, 9(3): 179-189. ">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Lawton instrumental activity daily living
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0015] occurrences matches {0..*} matches {	-- Ability to Use Telephone
+										value matches {
+											1|[local::at0016], 	-- Operates telephone on own initiative; looks up and dials numbers (1)
+											2|[local::at0020], 	-- Dials a few well-known numbers (1)
+											3|[local::at0021], 	-- Answers telephone, but does not dial (1)
+											4|[local::at0022]  	-- Does not use telephone at all (0)
+										}
+									}
+									ELEMENT[at0023] occurrences matches {0..1} matches {	-- Shopping
+										value matches {
+											1|[local::at0024], 	-- Takes care of all shopping needs independently (1)
+											2|[local::at0025], 	-- Shops independently for small purchases (0)
+											3|[local::at0026], 	-- Needs to be accompanied on any shopping trip (0)
+											4|[local::at0027]  	-- Completely unable to shop (0)
+										}
+									}
+									ELEMENT[at0028] occurrences matches {0..1} matches {	-- Food Preparation
+										value matches {
+											1|[local::at0029], 	-- Plans, prepares, and serves adequate meals independently (1)
+											2|[local::at0030], 	-- Prepares adequate meals if supplied with ingredients (0)
+											3|[local::at0031], 	-- Heats and serves prepared meals or prepares meals but does not maintain adequate diet (0)
+											4|[local::at0032]  	-- Needs to have meals prepared and served (0)
+										}
+									}
+									ELEMENT[at0033] occurrences matches {0..1} matches {	-- Housekeeping
+										value matches {
+											1|[local::at0034], 	-- Maintains house alone with occasional assistance (e.g. heavy work domestic help) (1)
+											2|[local::at0035], 	-- Performs light daily tasks such as dishwashing, bed making (1)
+											3|[local::at0036], 	-- Performs light daily tasks, but cannot maintain acceptable level of cleanliness (1)
+											4|[local::at0037], 	-- Needs help with all home maintenance tasks (1)
+											5|[local::at0038]  	-- Does not participate in any housekeeping tasks (0)
+										}
+									}
+									ELEMENT[at0039] occurrences matches {0..1} matches {	-- Laundry
+										value matches {
+											1|[local::at0040], 	-- Does personal laundry completely (1)
+											2|[local::at0041], 	-- Launders small items-rinses stockings, etc. (1)
+											3|[local::at0042]  	-- All laundry must be done by others (0)
+										}
+									}
+									ELEMENT[at0043] occurrences matches {0..1} matches {	-- Mode of Transportation
+										value matches {
+											1|[local::at0044], 	-- Travels independently on public transportation or drives own car (1)
+											2|[local::at0045], 	-- Arranges own travel via taxi, but does not otherwise use public transportation (1)
+											3|[local::at0046], 	-- Travels on public transportation when accompanied by another (1)
+											4|[local::at0047], 	-- Travel limited to taxi or automobile with assistance of another (0)
+											5|[local::at0048]  	-- Does not travel at all (0)
+										}
+									}
+									ELEMENT[at0049] occurrences matches {0..1} matches {	-- Responsibility for Own Medications
+										value matches {
+											1|[local::at0050], 	-- Is reponsible for taking medication in correct dosages at correct time (1)
+											2|[local::at0051], 	-- Takes responsibility if medication is prepared in advance in separate dosage (0)
+											3|[local::at0052]  	-- Is not capable of dispensing own medication (0)
+										}
+									}
+									ELEMENT[at0053] occurrences matches {0..1} matches {	-- Ability to Handle Finances
+										value matches {
+											1|[local::at0054], 	-- Manages financial matters independently (budgets, writes checks, pays rent, bills, goes to bank), collects and keeps track of income (1)
+											2|[local::at0055], 	-- Manages day-to-day purchases, but needs help with banking, major purchases, etc. (1)
+											3|[local::at0056]  	-- Incapable of handling money (0)
+										}
+									}
+									ELEMENT[at0057] occurrences matches {0..1} matches {	-- Total score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..8|}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Lawton instrumental activity daily living">
+					description = <"The Lawton Instrumental Activities of Daily Living (IADL) scale assesses independent living skills in elderly for 8 domains of function: telephone, shopping, food preparation, housekeeping, laundry, transportation mode, medications and handling finances. The score for each function is set according to the highest level of functioning in that category. The IADL total score ranges from 0 (low function, dependent) to 8 (high function, independent). ">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0015"] = <
+					text = <"Ability to Use Telephone">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Operates telephone on own initiative; looks up and dials numbers (1)">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Dials a few well-known numbers (1)">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Answers telephone, but does not dial (1)">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Does not use telephone at all (0)">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Shopping">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Takes care of all shopping needs independently (1)">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Shops independently for small purchases (0)">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Needs to be accompanied on any shopping trip (0)">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Completely unable to shop (0)">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Food Preparation">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Plans, prepares, and serves adequate meals independently (1)">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Prepares adequate meals if supplied with ingredients (0)">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Heats and serves prepared meals or prepares meals but does not maintain adequate diet (0)">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Needs to have meals prepared and served (0)">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Housekeeping">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Maintains house alone with occasional assistance (e.g. heavy work domestic help) (1)">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"Performs light daily tasks such as dishwashing, bed making (1)">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Performs light daily tasks, but cannot maintain acceptable level of cleanliness (1)">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Needs help with all home maintenance tasks (1)">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"Does not participate in any housekeeping tasks (0)">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Laundry">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Does personal laundry completely (1)">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Launders small items-rinses stockings, etc. (1)">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"All laundry must be done by others (0)">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"Mode of Transportation">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"Travels independently on public transportation or drives own car (1)">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"Arranges own travel via taxi, but does not otherwise use public transportation (1)">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"Travels on public transportation when accompanied by another (1)">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"Travel limited to taxi or automobile with assistance of another (0)">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Does not travel at all (0)">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Responsibility for Own Medications">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Is reponsible for taking medication in correct dosages at correct time (1)">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"Takes responsibility if medication is prepared in advance in separate dosage (0)">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Is not capable of dispensing own medication (0)">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"Ability to Handle Finances">
+					description = <"*">
+				>
+				["at0054"] = <
+					text = <"Manages financial matters independently (budgets, writes checks, pays rent, bills, goes to bank), collects and keeps track of income (1)">
+					description = <"*">
+				>
+				["at0055"] = <
+					text = <"Manages day-to-day purchases, but needs help with banking, major purchases, etc. (1)">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"Incapable of handling money (0)">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"Total score">
+					description = <"*">
+				>
+			>
+		>
+	>
