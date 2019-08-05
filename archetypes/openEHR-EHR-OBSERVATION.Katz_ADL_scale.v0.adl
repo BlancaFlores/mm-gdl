@@ -10,23 +10,23 @@ description
 		["name"] = <"Blanca Flores">
 		["email"] = <"blanca.flores@med.uni-heidelberg.de">
 		["organisation"] = <"Heidelberg University">
-		["date"] = <"2019-07-30">
+		["date"] = <"2019-04-25">
 	>
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To assess the level of independency in elderly based on six items (bathing, dressing, toileting, transferring, continence and feeding), as an ability measure to perform activities of daily living. ">
+			purpose = <"To assess the level of independency in elderly based on six items (bathing, dressing, toileting, transferring, continence and feeding), as a measure of the ability to perform activities of daily living. ">
 			use = <"Use to record the functional status in elderly and calculate a total ADL score, ranging from 0 (completely dependent) to 6 (completely independent).">
-			keywords = <"geriatric assessment", "ADL scale">
+			keywords = <"geriatric assessment", "ADL scale", "elderly">
 			misuse = <"Do not use to record activities of daily living other than the specified by the Katz ADL scale. ">
 			copyright = <"">
 		>
 	>
-	lifecycle_state = <"0">
+	lifecycle_state = <"AuthorDraft">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"52CD08B308EA57832958B5C6C0D443FE">
 		["references"] = <"Katz S., Ford AB, Moskowitz RW, et al. Studies of Illness in the Aged. The Index of ADL: A Standardized Measure of Biological and Psychosocial Function. JAMA: 1963; 185(12):914-919. ">
+		["MD5-CAM-1.0.1"] = <"4E30E7D443342D4C51414A5E7832485C">
 	>
 
 definition
@@ -96,7 +96,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Katz ADL scale">
-					description = <"unknown">
+					description = <"The Katz Activity of Daily Living (ADL) scale assesses the level of independency in elderly, based on six items (bathing, dressing, toileting, transferring, continence and feeding). The score for each item ranges from 0 (unable to perform the activity) to 1 (able to perform the activity). The total ADL score ranges from 0 (completely dependent) to 6 (completely independent).">
 				>
 				["at0001"] = <
 					text = <"Event Series">

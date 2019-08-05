@@ -7,24 +7,26 @@ language
 	original_language = <[ISO_639-1::en]>
 description
 	original_author = <
-		["name"] = <"">
+		["name"] = <"Blanca Flores">
+		["email"] = <"blanca.flores@med.uni-heidelberg.de">
+		["organisation"] = <"Heidelberg University">
+		["date"] = <"2019-05-13">
 	>
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To estimate risk of death from comorbid diseases. ">
-			use = <"To estimate the number and the severity of comorbidities, including nineteen diseases">
-			misuse = <"">
+			purpose = <"The CCI estimates the one-year mortality from comorbid diseases, by assessing the number and severity of comorbidities in a patient.">
+			use = <"Use to record the assessment of presence and severity of comorbidities, with an assigned weight varying from 1 to 6 for each of them, in accordance to their severity. The score can range from 0 to 37.">
+			keywords = <"comorbidities", "CCI">
+			misuse = <"Do not use to assess comorbidities that have not been defined by the CCI. ">
 			copyright = <"">
 		>
 	>
-	lifecycle_state = <"0">
+	lifecycle_state = <"AuthorDraft">
 	other_contributors = <>
 	other_details = <
-		["references"] = <"M. E. Charlson, P. Pompei, K. L. Ales, and C. R. MacKenzie, “A new method of classifying prognostic comorbidity in longitudinal studies: Development and validation,” J. Chronic Dis., 1987.
-
-A. Palumbo et al., “Geriatric assessment predicts survival and toxicities in elderly myeloma patients: An International Myeloma Working Group report,” Blood, vol. 13, pp. 2068–2074, 2015.">
-		["MD5-CAM-1.0.1"] = <"0E8F0CBCD8B6A318472A61987AEB013F">
+		["references"] = <"M. E. Charlson, P. Pompei, K. L. Ales, and C. R. MacKenzie, “A new method of classifying prognostic comorbidity in longitudinal studies: Development and validation,” J. Chronic Dis., 1987.">
+		["MD5-CAM-1.0.1"] = <"C7AFDF29A2587FE15684793DEB881BD9">
 	>
 
 definition
@@ -172,7 +174,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Charlson comorbidity index">
-					description = <"unknown">
+					description = <"The Charlson Comorbidity Index (CCI) assesses the presence and severity of comorbidities, to predict the one-year mortality in a patient. It considers nineteen diseases, and assignes a score varying from 1 to 6 for each of them in accordance to their severity. ">
 				>
 				["at0001"] = <
 					text = <"Event Series">
