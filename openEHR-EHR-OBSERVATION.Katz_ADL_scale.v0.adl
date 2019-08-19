@@ -1,0 +1,191 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.katz_adl_scale.v0
+
+concept
+	[at0000]	-- Katz ADL scale
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Blanca Flores">
+		["email"] = <"blanca.flores@med.uni-heidelberg.de">
+		["organisation"] = <"Heidelberg University">
+		["date"] = <"2019-04-25">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To assess the level of independency in elderly based on six items (bathing, dressing, toileting, transferring, continence and feeding), as a measure of the ability to perform activities of daily living. ">
+			use = <"Use to record the functional status in elderly and calculate a total ADL score, ranging from 0 (completely dependent) to 6 (completely independent).">
+			keywords = <"geriatric assessment", "ADL scale", "elderly">
+			misuse = <"Do not use to record activities of daily living other than the specified by the Katz ADL scale. ">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"Katz S., Ford AB, Moskowitz RW, et al. Studies of Illness in the Aged. The Index of ADL: A Standardized Measure of Biological and Psychosocial Function. JAMA: 1963; 185(12):914-919. ">
+		["MD5-CAM-1.0.1"] = <"FCC862FD6CBA7843368159CF790CAB14">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Katz ADL scale
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0007] occurrences matches {0..1} matches {	-- Bathing
+										value matches {
+											0|[local::at0008], 	-- 0- Needs help with bathing more than one part of the body, getting in or out of the tub or shower. Requires total bathing.
+											1|[local::at0009]  	-- 1- Bathes self completely or needs help in bathing only a single part of the body such as the back, genital area or disabled extremity. 
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {	-- Dressing
+										value matches {
+											0|[local::at0011], 	-- 0- Needs help with dressing self or needs to be completely dressed.
+											1|[local::at0012]  	-- 1- Gets clothes from closets and drawers and puts on clothes and outer garments complete with fasteners. May have help tying shoes.
+										}
+									}
+									ELEMENT[at0013] occurrences matches {0..1} matches {	-- Toileting
+										value matches {
+											0|[local::at0014], 	-- 0- Needs help transferring to the toilet, cleaning self or uses bedban or commode.
+											1|[local::at0015]  	-- 1- Goes to toilet, gets on and off, arranges clothes, cleans genital area without help.
+										}
+									}
+									ELEMENT[at0016] occurrences matches {0..1} matches {	-- Transferring
+										value matches {
+											0|[local::at0017], 	-- 0- Needs help in moving from bed to chair or requires a complete transfer.
+											1|[local::at0018]  	-- 1- Moves in and out of bed or chair unassisted. Mechanical transferring aides are acceptable.
+										}
+									}
+									ELEMENT[at0019] occurrences matches {0..1} matches {	-- Continence
+										value matches {
+											0|[local::at0020], 	-- 0- Is partially or totally incontinent of bowel or bladder.
+											1|[local::at0021]  	-- 1- Exercises complete self control over urination and defecation. 
+										}
+									}
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Feeding
+										value matches {
+											0|[local::at0005], 	-- 0- Needs partial or total help with feeding or requires parenteral feeding
+											1|[local::at0006]  	-- 1- Gets food from plate into mouth without help. Preparation of food may be done by another person.
+										}
+									}
+									ELEMENT[at0022] occurrences matches {0..1} matches {	-- Total score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..6|}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Katz ADL scale">
+					description = <"The Katz Activity of Daily Living (ADL) scale assesses the level of independency in elderly, based on six items (bathing, dressing, toileting, transferring, continence and feeding). The score for each item ranges from 0 (unable to perform the activity) to 1 (able to perform the activity). The total ADL score ranges from 0 (completely dependent) to 6 (completely independent).">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Feeding">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"0- Needs partial or total help with feeding or requires parenteral feeding">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"1- Gets food from plate into mouth without help. Preparation of food may be done by another person.">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Bathing">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"0- Needs help with bathing more than one part of the body, getting in or out of the tub or shower. Requires total bathing.">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"1- Bathes self completely or needs help in bathing only a single part of the body such as the back, genital area or disabled extremity. ">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Dressing">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"0- Needs help with dressing self or needs to be completely dressed.">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"1- Gets clothes from closets and drawers and puts on clothes and outer garments complete with fasteners. May have help tying shoes.">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Toileting">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"0- Needs help transferring to the toilet, cleaning self or uses bedban or commode.">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"1- Goes to toilet, gets on and off, arranges clothes, cleans genital area without help.">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Transferring">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"0- Needs help in moving from bed to chair or requires a complete transfer.">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"1- Moves in and out of bed or chair unassisted. Mechanical transferring aides are acceptable.">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Continence">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"0- Is partially or totally incontinent of bowel or bladder.">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"1- Exercises complete self control over urination and defecation. ">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Total score">
+					description = <"*">
+				>
+			>
+		>
+	>
