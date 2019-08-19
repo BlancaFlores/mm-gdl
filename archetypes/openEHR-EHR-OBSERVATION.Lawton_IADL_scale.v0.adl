@@ -2,9 +2,17 @@ archetype (adl_version=1.4)
 	openEHR-EHR-OBSERVATION.lawton_iadl_scale.v0
 
 concept
-	[at0000]	-- Lawton instrumental activity daily living
+	[at0000]	-- *Lawton instrumental activity daily living(en)
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Blanca Flores">
@@ -13,6 +21,14 @@ description
 		["date"] = <"2019-04-25">
 	>
 	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"*To assess independent living skills in elderly for 8 domains of function: telephone, shopping, food preparation, housekeeping, laundry, transportation mode, medications and handling finances. It may be used as a baseline assessment tool to identify improvement or deterioration in living skills over time. (en)">
+			use = <"*Use to record the assessment of independent living skills in elderly, who are in community, clinic or hospital settings, and calculate a summary score. (en)">
+			keywords = <"*elderly(en)", "*geriatric assessment(en)", "*IADL scale(en)">
+			misuse = <"*Do not use to assess independent living skills in non-elderly or in elderly institutionalized adults. (en)">
+			copyright = <"*(en)">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To assess independent living skills in elderly for 8 domains of function: telephone, shopping, food preparation, housekeeping, laundry, transportation mode, medications and handling finances. It may be used as a baseline assessment tool to identify improvement or deterioration in living skills over time. ">
@@ -25,84 +41,84 @@ description
 	lifecycle_state = <"AuthorDraft">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"40158EE43B16FF2F0F318CD748131438">
 		["references"] = <"Coyne R, Kluwer W. (2019). The Lawton Instrumental Activities of Daily Living (IADL) Scale. Hartford Institute for Geriatric Nursing, (23), New York.
 Lawton MP, Brody EM. (1969). Assessment of older people: self-maintaining and instrumental activities of daily living. Gerontologist, 9(3): 179-189. ">
+		["MD5-CAM-1.0.1"] = <"42E2482F550CCB1F6E9FF9D9BB5CBC65">
 	>
 
 definition
-	OBSERVATION[at0000] matches {	-- Lawton instrumental activity daily living
+	OBSERVATION[at0000] matches {	-- *Lawton instrumental activity daily living(en)
 		data matches {
-			HISTORY[at0001] matches {	-- Event Series
+			HISTORY[at0001] matches {	-- *Event Series(en)
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+					EVENT[at0002] occurrences matches {0..1} matches {	-- *Any event(en)
 						data matches {
-							ITEM_TREE[at0003] matches {	-- Tree
+							ITEM_TREE[at0003] matches {	-- *Tree(en)
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0015] occurrences matches {0..*} matches {	-- Ability to Use Telephone
+									ELEMENT[at0015] occurrences matches {0..*} matches {	-- Telefon
 										value matches {
-											1|[local::at0016], 	-- Operates telephone on own initiative; looks up and dials numbers (1)
-											2|[local::at0020], 	-- Dials a few well-known numbers (1)
-											3|[local::at0021], 	-- Answers telephone, but does not dial (1)
-											4|[local::at0022]  	-- Does not use telephone at all (0)
+											1|[local::at0016], 	-- 1- Benutzt Telefon aus eigener Initiative, wählt Nummern
+											2|[local::at0020], 	-- 1- Wählt einige bekannte Nummern
+											3|[local::at0021], 	-- 1- Nimmt ab, wählt aber nicht selbständig
+											4|[local::at0022]  	-- 0- Benutzt das Telefon gar nicht mehr
 										}
 									}
-									ELEMENT[at0023] occurrences matches {0..1} matches {	-- Shopping
+									ELEMENT[at0023] occurrences matches {0..1} matches {	-- Einkaufen
 										value matches {
-											1|[local::at0024], 	-- Takes care of all shopping needs independently (1)
-											2|[local::at0025], 	-- Shops independently for small purchases (0)
-											3|[local::at0026], 	-- Needs to be accompanied on any shopping trip (0)
-											4|[local::at0027]  	-- Completely unable to shop (0)
+											1|[local::at0024], 	-- 1- Kauft selbständig die meisten Dinge ein
+											2|[local::at0025], 	-- 0- Macht wenige Einkäufe
+											3|[local::at0026], 	-- 0- Benötigt beim Einkaufen Begleitung
+											4|[local::at0027]  	-- 0- Kann nicht einkaufen
 										}
 									}
-									ELEMENT[at0028] occurrences matches {0..1} matches {	-- Food Preparation
+									ELEMENT[at0028] occurrences matches {0..1} matches {	-- Kochen
 										value matches {
-											1|[local::at0029], 	-- Plans, prepares, and serves adequate meals independently (1)
-											2|[local::at0030], 	-- Prepares adequate meals if supplied with ingredients (0)
-											3|[local::at0031], 	-- Heats and serves prepared meals or prepares meals but does not maintain adequate diet (0)
-											4|[local::at0032]  	-- Needs to have meals prepared and served (0)
+											1|[local::at0029], 	-- 1- Plant und kocht die nötigen Mahlzeiten selbständig
+											2|[local::at0030], 	-- 0- Kocht nötige Mahlzeiten nur nach Vorbereitung durch Dritte
+											3|[local::at0031], 	-- 0- Kocht selbständig, hält aber benötigte Diät nicht ein
+											4|[local::at0032]  	-- 0- Benötigt vorbereitete und servierte Mahlzeiten
 										}
 									}
-									ELEMENT[at0033] occurrences matches {0..1} matches {	-- Housekeeping
+									ELEMENT[at0033] occurrences matches {0..1} matches {	-- Haushalt
 										value matches {
-											1|[local::at0034], 	-- Maintains house alone with occasional assistance (e.g. heavy work domestic help) (1)
-											2|[local::at0035], 	-- Performs light daily tasks such as dishwashing, bed making (1)
-											3|[local::at0036], 	-- Performs light daily tasks, but cannot maintain acceptable level of cleanliness (1)
-											4|[local::at0037], 	-- Needs help with all home maintenance tasks (1)
-											5|[local::at0038]  	-- Does not participate in any housekeeping tasks (0)
+											1|[local::at0034], 	-- 1- Hält Haushalt in Ordnung bzw. benötigt Assistenz bei schweren Arbeiten
+											2|[local::at0035], 	-- 1- Führt selbständig kleine Hausarbeiten aus
+											3|[local::at0036], 	-- 1- Kann kleine Hausarbeiten ausführen, aber nicht die Wohnung reinhalten
+											4|[local::at0037], 	-- 1- Benötigt Hilfe in allen Haushaltsverrichtungen
+											5|[local::at0038]  	-- 0- Kann keine täglichen Arbeiten im Haushalt mehr ausführen
 										}
 									}
-									ELEMENT[at0039] occurrences matches {0..1} matches {	-- Laundry
+									ELEMENT[at0039] occurrences matches {0..1} matches {	-- Wäsche
 										value matches {
-											1|[local::at0040], 	-- Does personal laundry completely (1)
-											2|[local::at0041], 	-- Launders small items-rinses stockings, etc. (1)
-											3|[local::at0042]  	-- All laundry must be done by others (0)
+											1|[local::at0040], 	-- 1- Wäscht sämtliche eigene Wäsche
+											2|[local::at0041], 	-- 1- Wäscht kleine Sachen
+											3|[local::at0042]  	-- 0- Gesamte Wäsche muss fremdorganisiert werden
 										}
 									}
-									ELEMENT[at0043] occurrences matches {0..1} matches {	-- Mode of Transportation
+									ELEMENT[at0043] occurrences matches {0..1} matches {	-- Verkehrsmittel
 										value matches {
-											1|[local::at0044], 	-- Travels independently on public transportation or drives own car (1)
-											2|[local::at0045], 	-- Arranges own travel via taxi, but does not otherwise use public transportation (1)
-											3|[local::at0046], 	-- Travels on public transportation when accompanied by another (1)
-											4|[local::at0047], 	-- Travel limited to taxi or automobile with assistance of another (0)
-											5|[local::at0048]  	-- Does not travel at all (0)
+											1|[local::at0044], 	-- 1- Benutzt unabhängig öffentliche Verkehrsmittel, eigenes Auto
+											2|[local::at0045], 	-- 1- Bestellt und benutzt das Taxi, aber keine öffentlichen Verkehrsmittel
+											3|[local::at0046], 	-- 1- Benutzt öffentliche Verkehrsmittel in Begleitung
+											4|[local::at0047], 	-- 0- In beschränktem Umfang Fahrten im Taxi oder Auto in Begleitung
+											5|[local::at0048]  	-- 0- Benutzt überhaupt keine Verkehrsmittel mehr
 										}
 									}
-									ELEMENT[at0049] occurrences matches {0..1} matches {	-- Responsibility for Own Medications
+									ELEMENT[at0049] occurrences matches {0..1} matches {	-- Medikamente
 										value matches {
-											1|[local::at0050], 	-- Is reponsible for taking medication in correct dosages at correct time (1)
-											2|[local::at0051], 	-- Takes responsibility if medication is prepared in advance in separate dosage (0)
-											3|[local::at0052]  	-- Is not capable of dispensing own medication (0)
+											1|[local::at0050], 	-- 1- Nimmt Medikamente selbständig zur richtigen Zeit in richtiger Dosierung
+											2|[local::at0051], 	-- 0- Nimmt vorbereitete Medikamente korrekt
+											3|[local::at0052]  	-- 0- Kann Medikamente nicht mehr korrekt einnehmen
 										}
 									}
-									ELEMENT[at0053] occurrences matches {0..1} matches {	-- Ability to Handle Finances
+									ELEMENT[at0053] occurrences matches {0..1} matches {	-- Geldgeschäfte
 										value matches {
-											1|[local::at0054], 	-- Manages financial matters independently (budgets, writes checks, pays rent, bills, goes to bank), collects and keeps track of income (1)
-											2|[local::at0055], 	-- Manages day-to-day purchases, but needs help with banking, major purchases, etc. (1)
-											3|[local::at0056]  	-- Incapable of handling money (0)
+											1|[local::at0054], 	-- 1- Regelt Geldeschäfte selbständig (Budget/Überweisungen/Gang zur Bank)
+											2|[local::at0055], 	-- 1- Erledigt täglich kleine Ausgaben; benötigt Hilfe bei Bankgeschäften
+											3|[local::at0056]  	-- 0- Kann nicht mehr mit Geld umgehen
 										}
 									}
-									ELEMENT[at0057] occurrences matches {0..1} matches {	-- Total score
+									ELEMENT[at0057] occurrences matches {0..1} matches {	-- Gesamtpunktzahl
 										value matches {
 											DV_COUNT matches {
 												magnitude matches {|0..8|}
@@ -143,19 +159,19 @@ ontology
 					description = <"*">
 				>
 				["at0016"] = <
-					text = <"Operates telephone on own initiative; looks up and dials numbers (1)">
+					text = <"1- Operates telephone on own initiative; looks up and dials numbers">
 					description = <"*">
 				>
 				["at0020"] = <
-					text = <"Dials a few well-known numbers (1)">
+					text = <"1- Dials a few well-known numbers">
 					description = <"*">
 				>
 				["at0021"] = <
-					text = <"Answers telephone, but does not dial (1)">
+					text = <"1- Answers telephone, but does not dial">
 					description = <"*">
 				>
 				["at0022"] = <
-					text = <"Does not use telephone at all (0)">
+					text = <"0- Does not use telephone at all">
 					description = <"*">
 				>
 				["at0023"] = <
@@ -163,19 +179,19 @@ ontology
 					description = <"*">
 				>
 				["at0024"] = <
-					text = <"Takes care of all shopping needs independently (1)">
+					text = <"1- Takes care of all shopping needs independently">
 					description = <"*">
 				>
 				["at0025"] = <
-					text = <"Shops independently for small purchases (0)">
+					text = <"0- Shops independently for small purchases">
 					description = <"*">
 				>
 				["at0026"] = <
-					text = <"Needs to be accompanied on any shopping trip (0)">
+					text = <"0- Needs to be accompanied on any shopping trip">
 					description = <"*">
 				>
 				["at0027"] = <
-					text = <"Completely unable to shop (0)">
+					text = <"0- Completely unable to shop">
 					description = <"*">
 				>
 				["at0028"] = <
@@ -183,19 +199,19 @@ ontology
 					description = <"*">
 				>
 				["at0029"] = <
-					text = <"Plans, prepares, and serves adequate meals independently (1)">
+					text = <"1- Plans, prepares, and serves adequate meals independently">
 					description = <"*">
 				>
 				["at0030"] = <
-					text = <"Prepares adequate meals if supplied with ingredients (0)">
+					text = <"0- Prepares adequate meals if supplied with ingredients">
 					description = <"*">
 				>
 				["at0031"] = <
-					text = <"Heats and serves prepared meals or prepares meals but does not maintain adequate diet (0)">
+					text = <"0- Heats and serves prepared meals or prepares meals but does not maintain adequate diet">
 					description = <"*">
 				>
 				["at0032"] = <
-					text = <"Needs to have meals prepared and served (0)">
+					text = <"0- Needs to have meals prepared and served">
 					description = <"*">
 				>
 				["at0033"] = <
@@ -203,23 +219,23 @@ ontology
 					description = <"*">
 				>
 				["at0034"] = <
-					text = <"Maintains house alone with occasional assistance (e.g. heavy work domestic help) (1)">
+					text = <"1- Maintains house alone with occasional assistance (e.g. heavy work domestic help)">
 					description = <"*">
 				>
 				["at0035"] = <
-					text = <"Performs light daily tasks such as dishwashing, bed making (1)">
+					text = <"1- Performs light daily tasks such as dishwashing, bed making">
 					description = <"*">
 				>
 				["at0036"] = <
-					text = <"Performs light daily tasks, but cannot maintain acceptable level of cleanliness (1)">
+					text = <"1- Performs light daily tasks, but cannot maintain acceptable level of cleanliness">
 					description = <"*">
 				>
 				["at0037"] = <
-					text = <"Needs help with all home maintenance tasks (1)">
+					text = <"1- Needs help with all home maintenance tasks">
 					description = <"*">
 				>
 				["at0038"] = <
-					text = <"Does not participate in any housekeeping tasks (0)">
+					text = <"0- Does not participate in any housekeeping tasks">
 					description = <"*">
 				>
 				["at0039"] = <
@@ -227,15 +243,15 @@ ontology
 					description = <"*">
 				>
 				["at0040"] = <
-					text = <"Does personal laundry completely (1)">
+					text = <"1- Does personal laundry completely">
 					description = <"*">
 				>
 				["at0041"] = <
-					text = <"Launders small items-rinses stockings, etc. (1)">
+					text = <"1- Launders small items-rinses stockings, etc.">
 					description = <"*">
 				>
 				["at0042"] = <
-					text = <"All laundry must be done by others (0)">
+					text = <"0- All laundry must be done by others">
 					description = <"*">
 				>
 				["at0043"] = <
@@ -243,23 +259,23 @@ ontology
 					description = <"*">
 				>
 				["at0044"] = <
-					text = <"Travels independently on public transportation or drives own car (1)">
+					text = <"1- Travels independently on public transportation or drives own car">
 					description = <"*">
 				>
 				["at0045"] = <
-					text = <"Arranges own travel via taxi, but does not otherwise use public transportation (1)">
+					text = <"1- Arranges own travel via taxi, but does not otherwise use public transportation">
 					description = <"*">
 				>
 				["at0046"] = <
-					text = <"Travels on public transportation when accompanied by another (1)">
+					text = <"1- Travels on public transportation when accompanied by another">
 					description = <"*">
 				>
 				["at0047"] = <
-					text = <"Travel limited to taxi or automobile with assistance of another (0)">
+					text = <"0- Travel limited to taxi or automobile with assistance of another">
 					description = <"*">
 				>
 				["at0048"] = <
-					text = <"Does not travel at all (0)">
+					text = <"0- Does not travel at all">
 					description = <"*">
 				>
 				["at0049"] = <
@@ -267,15 +283,15 @@ ontology
 					description = <"*">
 				>
 				["at0050"] = <
-					text = <"Is reponsible for taking medication in correct dosages at correct time (1)">
+					text = <"1- Is reponsible for taking medication in correct dosages at correct time">
 					description = <"*">
 				>
 				["at0051"] = <
-					text = <"Takes responsibility if medication is prepared in advance in separate dosage (0)">
+					text = <"0- Takes responsibility if medication is prepared in advance in separate dosage">
 					description = <"*">
 				>
 				["at0052"] = <
-					text = <"Is not capable of dispensing own medication (0)">
+					text = <"0- Is not capable of dispensing own medication">
 					description = <"*">
 				>
 				["at0053"] = <
@@ -283,19 +299,199 @@ ontology
 					description = <"*">
 				>
 				["at0054"] = <
-					text = <"Manages financial matters independently (budgets, writes checks, pays rent, bills, goes to bank), collects and keeps track of income (1)">
+					text = <"1- Manages financial matters independently (budgets, writes checks, pays rent, bills, goes to bank), collects and keeps track of income">
 					description = <"*">
 				>
 				["at0055"] = <
-					text = <"Manages day-to-day purchases, but needs help with banking, major purchases, etc. (1)">
+					text = <"1- Manages day-to-day purchases, but needs help with banking, major purchases, etc.">
 					description = <"*">
 				>
 				["at0056"] = <
-					text = <"Incapable of handling money (0)">
+					text = <"0- Incapable of handling money">
 					description = <"*">
 				>
 				["at0057"] = <
 					text = <"Total score">
+					description = <"*">
+				>
+			>
+		>
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Lawton instrumental activity daily living(en)">
+					description = <"*The Lawton Instrumental Activities of Daily Living (IADL) scale assesses independent living skills in elderly for 8 domains of function: telephone, shopping, food preparation, housekeeping, laundry, transportation mode, medications and handling finances. The score for each function is set according to the highest level of functioning in that category. The IADL total score ranges from 0 (low function, dependent) to 8 (high function, independent). (en)">
+				>
+				["at0001"] = <
+					text = <"*Event Series(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"*Any event(en)">
+					description = <"**(en)">
+				>
+				["at0003"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0015"] = <
+					text = <"Telefon">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"1- Benutzt Telefon aus eigener Initiative, wählt Nummern">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"1- Wählt einige bekannte Nummern">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"1- Nimmt ab, wählt aber nicht selbständig">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"0- Benutzt das Telefon gar nicht mehr">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Einkaufen">
+					description = <"**(en)">
+				>
+				["at0024"] = <
+					text = <"1- Kauft selbständig die meisten Dinge ein">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"0- Macht wenige Einkäufe">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"0- Benötigt beim Einkaufen Begleitung">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"0- Kann nicht einkaufen">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Kochen">
+					description = <"**(en)">
+				>
+				["at0029"] = <
+					text = <"1- Plant und kocht die nötigen Mahlzeiten selbständig">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"0- Kocht nötige Mahlzeiten nur nach Vorbereitung durch Dritte">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"0- Kocht selbständig, hält aber benötigte Diät nicht ein">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"0- Benötigt vorbereitete und servierte Mahlzeiten">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Haushalt">
+					description = <"**(en)">
+				>
+				["at0034"] = <
+					text = <"1- Hält Haushalt in Ordnung bzw. benötigt Assistenz bei schweren Arbeiten">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"1- Führt selbständig kleine Hausarbeiten aus">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"1- Kann kleine Hausarbeiten ausführen, aber nicht die Wohnung reinhalten">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"1- Benötigt Hilfe in allen Haushaltsverrichtungen">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"0- Kann keine täglichen Arbeiten im Haushalt mehr ausführen">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Wäsche">
+					description = <"**(en)">
+				>
+				["at0040"] = <
+					text = <"1- Wäscht sämtliche eigene Wäsche">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"1- Wäscht kleine Sachen">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"0- Gesamte Wäsche muss fremdorganisiert werden">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"Verkehrsmittel">
+					description = <"**(en)">
+				>
+				["at0044"] = <
+					text = <"1- Benutzt unabhängig öffentliche Verkehrsmittel, eigenes Auto">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"1- Bestellt und benutzt das Taxi, aber keine öffentlichen Verkehrsmittel">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"1- Benutzt öffentliche Verkehrsmittel in Begleitung">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"0- In beschränktem Umfang Fahrten im Taxi oder Auto in Begleitung">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"0- Benutzt überhaupt keine Verkehrsmittel mehr">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Medikamente">
+					description = <"**(en)">
+				>
+				["at0050"] = <
+					text = <"1- Nimmt Medikamente selbständig zur richtigen Zeit in richtiger Dosierung">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"0- Nimmt vorbereitete Medikamente korrekt">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"0- Kann Medikamente nicht mehr korrekt einnehmen">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"Geldgeschäfte">
+					description = <"**(en)">
+				>
+				["at0054"] = <
+					text = <"1- Regelt Geldeschäfte selbständig (Budget/Überweisungen/Gang zur Bank)">
+					description = <"*">
+				>
+				["at0055"] = <
+					text = <"1- Erledigt täglich kleine Ausgaben; benötigt Hilfe bei Bankgeschäften">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"0- Kann nicht mehr mit Geld umgehen">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"Gesamtpunktzahl">
 					description = <"*">
 				>
 			>

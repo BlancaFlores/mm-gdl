@@ -1,5 +1,5 @@
 archetype (adl_version=1.4)
-	openEHR-EHR-EVALUATION.frailty_profile_age_score.v0
+	openEHR-EHR-EVALUATION.frailty_profile_age.v0
 
 concept
 	[at0000]	-- Frailty profile age score

@@ -5,6 +5,14 @@ concept
 	[at0000]	-- Lawton_IADL_score
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Blanca Flores">
@@ -13,10 +21,18 @@ description
 		["date"] = <"2019-04-25">
 	>
 	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"*To record the score for each domain of function according to the Lawton Instrumental Activity of Daily Living (IADL) scale, which can be either 0 or 1.(en)">
+			use = <"*Use as an internal archetype in the GDL guideline to record the score (0 or 1) for each domain of function and summary score in the IADL scale.(en)">
+			keywords = <"*IADL scale(en)", ...>
+			misuse = <"*Do not use to assess skills for a scale other than IADL. (en)">
+			copyright = <"*(en)">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record the numerical score for each domain of function according to the Lawton Instrumental Activity of Daily Living (IADL) scale. ">
-			use = <"Use as an internal archetype in the GDL guideline to record the numerical score for each domain of function and summary score in the IADL scale.">
+			purpose = <"To record the score for each domain of function according to the Lawton Instrumental Activity of Daily Living (IADL) scale, which can be either 0 or 1.">
+			use = <"Use as an internal archetype in the GDL guideline to record the score (0 or 1) for each domain of function and summary score in the IADL scale.">
 			keywords = <"IADL scale", ...>
 			misuse = <"Do not use to assess skills for a scale other than IADL. ">
 			copyright = <"">
@@ -25,9 +41,9 @@ description
 	lifecycle_state = <"AuthorDraft">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"31E7E59E1386CF62723DF2FF68C45552">
 		["references"] = <"Coyne R, Kluwer W. (2019). The Lawton Instrumental Activities of Daily Living (IADL) Scale. Hartford Institute for Geriatric Nursing, (23), New York.
 Lawton MP, Brody EM. (1969). Assessment of older people: self-maintaining and instrumental activities of daily living. Gerontologist, 9(3): 179-189. ">
+		["MD5-CAM-1.0.1"] = <"CF6CC2C6502F2025D374C99161383C99">
 	>
 
 definition
@@ -39,67 +55,52 @@ definition
 						data matches {
 							ITEM_TREE[at0003] matches {	-- Tree
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Ability to use telephone
+									ELEMENT[at0013] occurrences matches {0..1} matches {	-- Ability to use telephone
 										value matches {
-											DV_COUNT matches {
-												magnitude matches {|0..1|}
-											}
+											0|[local::at0014], 	-- 0
+											1|[local::at0015]  	-- 1
 										}
 									}
-									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Shopping
+									ELEMENT[at0016] occurrences matches {0..1} matches {	-- Shopping
 										value matches {
-											DV_COUNT matches {
-												magnitude matches {|0..1|}
-											}
+											0|[local::at0017], 	-- 0
+											1|[local::at0018]  	-- 1
 										}
 									}
-									ELEMENT[at0006] occurrences matches {0..1} matches {	-- Food preparation
+									ELEMENT[at0019] occurrences matches {0..1} matches {	-- Food preparation
 										value matches {
-											DV_COUNT matches {
-												magnitude matches {|0..1|}
-											}
+											0|[local::at0020], 	-- 0
+											1|[local::at0021]  	-- 1
 										}
 									}
-									ELEMENT[at0007] occurrences matches {0..1} matches {	-- House keeping
+									ELEMENT[at0022] occurrences matches {0..1} matches {	-- House keeping
 										value matches {
-											DV_COUNT matches {
-												magnitude matches {|0..1|}
-											}
+											0|[local::at0023], 	-- 0
+											1|[local::at0024]  	-- 1
 										}
 									}
-									ELEMENT[at0008] occurrences matches {0..1} matches {	-- Laundry
+									ELEMENT[at0025] occurrences matches {0..1} matches {	-- Laundry
 										value matches {
-											DV_COUNT matches {
-												magnitude matches {|0..1|}
-											}
+											0|[local::at0026], 	-- 0
+											1|[local::at0027]  	-- 1
 										}
 									}
-									ELEMENT[at0009] occurrences matches {0..1} matches {	-- Mode of Transportation
+									ELEMENT[at0028] occurrences matches {0..1} matches {	-- Mode of Transportation
 										value matches {
-											DV_COUNT matches {
-												magnitude matches {|0..1|}
-											}
+											0|[local::at0029], 	-- 0
+											1|[local::at0030]  	-- 1
 										}
 									}
-									ELEMENT[at0010] occurrences matches {0..1} matches {	-- Responsibility for Own Medications
+									ELEMENT[at0031] occurrences matches {0..1} matches {	-- Responsibility for Own Medications
 										value matches {
-											DV_COUNT matches {
-												magnitude matches {|0..1|}
-											}
+											0|[local::at0033], 	-- 0
+											1|[local::at0034]  	-- 1
 										}
 									}
-									ELEMENT[at0011] occurrences matches {0..1} matches {	-- Ability to Handle Finances
+									ELEMENT[at0032] occurrences matches {0..1} matches {	-- Ability to Handle Finances
 										value matches {
-											DV_COUNT matches {
-												magnitude matches {|0..1|}
-											}
-										}
-									}
-									ELEMENT[at0012] occurrences matches {0..1} matches {	-- Total IADL score
-										value matches {
-											DV_COUNT matches {
-												magnitude matches {|0..8|}
-											}
+											0|[local::at0035], 	-- 0
+											1|[local::at0036]  	-- 1
 										}
 									}
 								}
@@ -131,40 +132,216 @@ ontology
 					text = <"Tree">
 					description = <"@ internal @">
 				>
-				["at0004"] = <
+				["at0013"] = <
 					text = <"Ability to use telephone">
 					description = <"*">
 				>
-				["at0005"] = <
+				["at0014"] = <
+					text = <"0">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"1">
+					description = <"*">
+				>
+				["at0016"] = <
 					text = <"Shopping">
 					description = <"*">
 				>
-				["at0006"] = <
+				["at0017"] = <
+					text = <"0">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"1">
+					description = <"*">
+				>
+				["at0019"] = <
 					text = <"Food preparation">
 					description = <"*">
 				>
-				["at0007"] = <
+				["at0020"] = <
+					text = <"0">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"1">
+					description = <"*">
+				>
+				["at0022"] = <
 					text = <"House keeping">
 					description = <"*">
 				>
-				["at0008"] = <
+				["at0023"] = <
+					text = <"0">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"1">
+					description = <"*">
+				>
+				["at0025"] = <
 					text = <"Laundry">
 					description = <"*">
 				>
-				["at0009"] = <
+				["at0026"] = <
+					text = <"0">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"1">
+					description = <"*">
+				>
+				["at0028"] = <
 					text = <"Mode of Transportation">
 					description = <"*">
 				>
-				["at0010"] = <
+				["at0029"] = <
+					text = <"0">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"1">
+					description = <"*">
+				>
+				["at0031"] = <
 					text = <"Responsibility for Own Medications">
 					description = <"*">
 				>
-				["at0011"] = <
+				["at0032"] = <
 					text = <"Ability to Handle Finances">
 					description = <"*">
 				>
-				["at0012"] = <
-					text = <"Total IADL score">
+				["at0033"] = <
+					text = <"0">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"1">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"0">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"1">
+					description = <"*">
+				>
+			>
+		>
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Lawton_IADL_score(en)">
+					description = <"*unknown(en)">
+				>
+				["at0001"] = <
+					text = <"*Event Series(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"*Any event(en)">
+					description = <"**(en)">
+				>
+				["at0003"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0013"] = <
+					text = <"Telefon">
+					description = <"**(en)">
+				>
+				["at0014"] = <
+					text = <"0">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"1">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Einkaufen">
+					description = <"**(en)">
+				>
+				["at0017"] = <
+					text = <"0">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"1">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Kochen">
+					description = <"**(en)">
+				>
+				["at0020"] = <
+					text = <"0">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"1">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Haushalt">
+					description = <"**(en)">
+				>
+				["at0023"] = <
+					text = <"0">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"1">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Wäsche">
+					description = <"**(en)">
+				>
+				["at0026"] = <
+					text = <"0">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"1">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Verkehrsmittel">
+					description = <"**(en)">
+				>
+				["at0029"] = <
+					text = <"0">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"1">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Medikamente">
+					description = <"**(en)">
+				>
+				["at0032"] = <
+					text = <"Geldgeschäfte">
+					description = <"**(en)">
+				>
+				["at0033"] = <
+					text = <"0">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"1">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"0">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"1">
 					description = <"*">
 				>
 			>

@@ -7,15 +7,23 @@
   },
   "description": {
     "original_author": {
-      "date": "2019-08-04"
+      "date": "2019-08-04",
+      "name": "Blanca Flores",
+      "organisation": "Heidelberg University",
+      "email": "blanca.flores@med.uni-heidelberg.de"
     },
     "lifecycle_state": "Not set",
     "details": {
       "en": {
-        "id": "en"
+        "id": "en",
+        "purpose": "To calculate the age category of a patient, depending on their birth date.",
+        "use": "Use to calculate the age category of a patient, which is used to determine the frailty profile score in elderly patients. ",
+        "misuse": "Do not use to determine age categories other than the defined by the frailty profile. "
       }
     },
-    "other_details": {}
+    "other_details": {
+      "references": "A. Palumbo et al., “Geriatric assessment predicts survival and toxicities in elderly myeloma patients: An International Myeloma Working Group report,” Blood, vol. 13, pp. 2068–2074, 2015."
+    }
   },
   "definition": {
     "data_bindings": {
@@ -92,7 +100,8 @@
         "terms": {
           "gt0001": {
             "id": "gt0001",
-            "text": "Frailty_profile_age_score"
+            "text": "Frailty_profile_age_score",
+            "description": "An internal calculation for an age category, which is used to determine the frailty profile score in elderly patients. Used within the frailty profile multiple myeloma GDL guideline. "
           },
           "gt0004": {
             "id": "gt0004",
