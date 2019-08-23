@@ -5,6 +5,16 @@ concept
 	[at0000]	-- Katz ADL scale
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			author = <
+				["name"] = <"Blanca Flores">
+				["email"] = <"blanca.flores@med-uni-heidelberg.de">
+				["organisation"] = <"Heidelberg University">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Blanca Flores">
@@ -13,6 +23,14 @@ description
 		["date"] = <"2019-04-25">
 	>
 	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Beurteilung der Unabhängigkeit älterer Menschen anhand von sechs Faktoren (Baden, Ankleiden, Toilettengang, Transfer, Kontinenz und Nahrungsaufnahme), als Maß für die Fähigkeit, alltägliche Aktivitäten auszuführen.">
+			use = <"Verwenden Sie diese Option, um den Funktionsstatus bei älteren Menschen aufzuzeichnen und einen ADL-Gesamtwert zu berechnen, der von 0 (vollständig abhängig) bis 6 (vollständig unabhängig) reicht.">
+			keywords = <"*geriatric assessment(en)", "*ADL scale(en)", "*elderly(en)">
+			misuse = <"Verwenden Sie diese Funktion nicht, um Aktivitäten des täglichen Lebens aufzuzeichnen, die nicht der von der Katz ADL-Skala angegebenen entsprechen.">
+			copyright = <"*">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To assess the level of independency in elderly based on six items (bathing, dressing, toileting, transferring, continence and feeding), as a measure of the ability to perform activities of daily living. ">
@@ -26,7 +44,7 @@ description
 	other_contributors = <>
 	other_details = <
 		["references"] = <"Katz S., Ford AB, Moskowitz RW, et al. Studies of Illness in the Aged. The Index of ADL: A Standardized Measure of Biological and Psychosocial Function. JAMA: 1963; 185(12):914-919. ">
-		["MD5-CAM-1.0.1"] = <"FCC862FD6CBA7843368159CF790CAB14">
+		["MD5-CAM-1.0.1"] = <"3D34DCA581AA9A5102D33B6E25BBB9EF">
 	>
 
 definition
@@ -184,6 +202,107 @@ ontology
 				>
 				["at0022"] = <
 					text = <"Total score">
+					description = <"*">
+				>
+			>
+		>
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"Katz ADL scale">
+					description = <"Die Aktivitäten des täglichen Lebens (ATL) Skala bewertet den Grad der Unabhängigkeit älterer Menschen anhand von sechs Faktoren (Baden, Ankleiden, Toilettengang, Transfer, Kontinenz und Nahrungsaufnahme). Die Punktzahl für jeden Gegenstand reicht von 0 (die Aktivität kann nicht ausgeführt werden) bis 1 (die Aktivität kann ausgeführt werden). Die ADL-Gesamtpunktzahl reciht von 0 (vollständig abhängig) bis 6 (vollständig unabhängig).">
+				>
+				["at0001"] = <
+					text = <"*Event Series(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"*Any event(en)">
+					description = <"**(en)">
+				>
+				["at0003"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0004"] = <
+					text = <"Nahrungsaufnahme">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"0- Benötigt teilweise oder vollständige Hilfe bei der Nahrungsaufnahme, oder ist auf parenterale Ernährung angewiesen.">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"1- Führt das Essen ohne Hilfe vom Teller in den Mund. Die Essensvorbereitung kann von einer anderen Person übernommen werden.">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Baden">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"0- Benötigt Hilfe beim Waschen von mehr als einem Körperteil, beim Ein- und Aussteigen aus der Badewanne oder der Dusche,
+oder ist beim Baden auf vollständige Hilfe angewiesen.">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"1- Badet/wäscht sich völlig selbständig oder benötigt Hilfe beim
+Waschen eines einzelnen Körperteils, wie z.B. Rücken,
+Intimbereich oder behinderte Extremität.">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Ankleiden">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"0- Benötigt Hilfe beim selbständigen Ankleiden oder ist auf vollständige Hilfe beim Ankleiden angewiesen.">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"1- Holt Kleider aus dem Schrank und der Schublade und zieht Wäsche und Kleider selbständig an (samt Zuhaken/Zuknöpfen). Benötigt allenfalls Hilfe beim Schuhbinden.
+">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Toilettengang">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"0- Benötigt Hilfe beim Transfer zu der Toilette und beim Abwischen, oder beansprucht Steckbecken oder Toilettenstuhl.">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"1- Geht allein auf die Toilette, wischt sich danach selbständig ab und ordnet die Kleidung.
+">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Transfer">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"0- Benötigt Hilfe, um vom Bett auf einen Sessel zu gelangen, oder ist auf vollständige Hilfe beim Transfer angewiesen.">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"1- Kommt ohne Hilfe in und aus dem Bett oder einem Sessel. Mechanische Gehhilfen dürfen dabei verwendet werden.">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Kontinenz">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"0- Leidet an teilweiser oder totaler Stuhl- oder Harninkontinenz.">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"1- Besitzt die vollständige Kontrolle über die Harn- und Stuhlentleerung.">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Gesamtpunktzahl">
 					description = <"*">
 				>
 			>
