@@ -1,0 +1,806 @@
+{
+  "id": "CCI_scale.v0",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2019-07-08",
+      "name": "Blanca Flores",
+      "organisation": "Heidelberg University",
+      "email": "blanca.flores@med.uni-heidelberg.de"
+    },
+    "lifecycle_state": "Not set",
+    "details": {
+      "en": {
+        "id": "en",
+        "purpose": "To calculate a total CCI score in a patient, by assessing presence of comorbities. This score can be used to estimate the one-year mortality from comorbid diseases in a patient. ",
+        "keywords": [
+          "CCI",
+          "comorbidities"
+        ],
+        "use": "Use to calculate a total CCI score in a patient, according to presence of comorbid diseases. ",
+        "misuse": "Do not use to assess comorbidities that have not been defined by the CCI. "
+      }
+    },
+    "other_details": {
+      "references": "M. E. Charlson, P. Pompei, K. L. Ales, and C. R. MacKenzie, “A new method of classifying prognostic comorbidity in longitudinal studies: Development and validation,” J. Chronic Dis., 1987."
+    }
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0002": {
+        "id": "gt0002",
+        "model_id": "openEHR-EHR-OBSERVATION.charlson_comorbidity_index.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.charlson_comorbidity_index.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0003": {
+            "id": "gt0003",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0006]"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0009]"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0012]"
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0013]"
+          },
+          "gt0007": {
+            "id": "gt0007",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0016]"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0019]"
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0020]"
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0021]"
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0022]"
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0030]"
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0031]"
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0034]"
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0037]"
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0040]"
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0043]"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0044]"
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0047]"
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0050]"
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0053]"
+          }
+        }
+      },
+      "gt0022": {
+        "id": "gt0022",
+        "model_id": "openEHR-EHR-OBSERVATION.charlson_comorbidity_index.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.charlson_comorbidity_index.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0053": {
+            "id": "gt0053",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0054]"
+          }
+        }
+      }
+    },
+    "rules": {
+      "gt0075": {
+        "id": "gt0075",
+        "priority": 1,
+        "when": [
+          "$gt0003|Myocardial infarction|!=null",
+          "$gt0004|Congestive heart failure|!=null",
+          "$gt0005|Peripheral disease|!=null",
+          "$gt0006|Cerebrovascular disease: CVA with mild or no residua or TIA|!=null",
+          "$gt0007|Dementia|!=null",
+          "$gt0008|Chronic pulmonary disease|!=null",
+          "$gt0009|Connective tissue disease|!=null",
+          "$gt0010|Peptic ulcer disease|!=null",
+          "$gt0011|Mild liver disease|!=null",
+          "$gt0012|Diabetes without end-organ damage |!=null",
+          "$gt0013|Hemiplegia|!=null",
+          "$gt0014|Moderate or severe renal disease|!=null",
+          "$gt0015|Diabetes with end-organ damage|!=null",
+          "$gt0016|Tumor without metastasis|!=null",
+          "$gt0017|Leukemia |!=null",
+          "$gt0018|Lymphoma|!=null",
+          "$gt0019|Moderate or severe liver disease|!=null",
+          "$gt0020|Metastatic solid tumor|!=null",
+          "$gt0021|AIDS|!=null"
+        ],
+        "then": [
+          "$gt0053|Total score|.magnitude=$gt0003.value+$gt0004.value+$gt0005.value+$gt0006.value+$gt0007.value+$gt0008.value+$gt0009.value+$gt0010.value+$gt0011.value+$gt0012.value+$gt0016.value+$gt0017.value+$gt0018.value+$gt0019.value+$gt0020.value+$gt0021.value+$gt0013.value+$gt0014.value+$gt0015.value"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Charslon_Comorbidity_Index",
+            "description": "The Charlson Comorbidity Index (CCI) assesses the presence and severity of comorbidities, to predict the one-year mortality in a patient. It considers nineteen diseases and assigns a weight varying from 1 to 6 for each of them in accordance to their severity. "
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Myocardial infarction",
+            "description": "Myocardial infarction (history, not ECG changes only)"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Congestive heart failure",
+            "description": "Congestive heart failure"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "Peripheral disease",
+            "description": "Peripheral disease (includes aortic aneurysm >= 6)"
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "Cerebrovascular disease: CVA with mild or no residua or TIA",
+            "description": "Cerebrovascular disease: CVA with mild or no residua or TIA"
+          },
+          "gt0007": {
+            "id": "gt0007",
+            "text": "Dementia",
+            "description": "Dementia"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Chronic pulmonary disease",
+            "description": "Chronic pulmonary disease"
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "text": "Connective tissue disease",
+            "description": "Connective tissue disease"
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "text": "Peptic ulcer disease",
+            "description": "Peptic ulcer disease"
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "Mild liver disease",
+            "description": "Mild liver diesease (without portal hypertension, includes chronic hepatitis)"
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "text": "Diabetes without end-organ damage ",
+            "description": "Diabetes without end-organ damage (excludes diet-controlled alone)"
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "Hemiplegia",
+            "description": "Hemiplegia"
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "Moderate or severe renal disease",
+            "description": "Moderate or severe renal disease"
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "Diabetes with end-organ damage",
+            "description": "Diabetes with end-organ damage (retinopathy, neuropathy, nephropathy or brittle diabetes)"
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "Tumor without metastasis",
+            "description": "Tumor without metastasis (exclude if > 5 y from diagnosis)"
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "Leukemia ",
+            "description": "Leukemia (acute or chronic)"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "Lymphoma",
+            "description": "Lymphoma"
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "Moderate or severe liver disease",
+            "description": "Moderate or severe liver disease"
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "Metastatic solid tumor",
+            "description": "Metastatic solid tumor"
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "text": "AIDS",
+            "description": "AIDS (not just HIV positive)"
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "Myocardial infarction",
+            "description": "Myocardial infarction (history, not ECG changes only)"
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Set Myocardial infarction present"
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "Calculate total score"
+          },
+          "gt0027": {
+            "id": "gt0027",
+            "text": "Congestive heart failure",
+            "description": "Congestive heart failure"
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Peripheral disease",
+            "description": "Peripheral disease (includes aortic aneurysm >= 6)"
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "text": "Cerebrovascular disease: CVA with mild or no residua or TIA",
+            "description": "Cerebrovascular disease: CVA with mild or no residua or TIA"
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "text": "Dementia",
+            "description": "Dementia"
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "Chronic pulmonary disease",
+            "description": "Chronic pulmonary disease"
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "Connective tissue disease",
+            "description": "Connective tissue disease"
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "Peptic ulcer disease",
+            "description": "Peptic ulcer disease"
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "Mild liver disease",
+            "description": "Mild liver diesease (without portal hypertension, includes chronic hepatitis)"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "Diabetes without end-organ damage ",
+            "description": "Diabetes without end-organ damage (excludes diet-controlled alone)"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "Tumor without metastasis",
+            "description": "Tumor without metastasis (exclude if > 5 y from diagnosis)"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "Leukemia ",
+            "description": "Leukemia (acute or chronic)"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "Lymphoma",
+            "description": "Lymphoma"
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "Moderate or severe liver disease",
+            "description": "Moderate or severe liver disease"
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "Metastatic solid tumor",
+            "description": "Metastatic solid tumor"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "AIDS",
+            "description": "AIDS (not just HIV positive)"
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "Set Congestive heart failure present"
+          },
+          "gt0043": {
+            "id": "gt0043",
+            "text": "Set Hemiplegia present"
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "Hemiplegia",
+            "description": "Hemiplegia"
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "Set Peripheral disease present"
+          },
+          "gt0047": {
+            "id": "gt0047",
+            "text": "Myocardial infarction diagnosis",
+            "description": "Identification of the problem or diagnosis, by name."
+          },
+          "gt0048": {
+            "id": "gt0048",
+            "text": "Myocardial infarction onset",
+            "description": "Estimated or actual date/time that signs or symptoms of the problem/diagnosis were first observed."
+          },
+          "gt0049": {
+            "id": "gt0049",
+            "text": "Myocardial diagnosis"
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "Myocardial infarction diagnosis",
+            "description": "The index diagnosis"
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "text": "Myocardial diagnosis"
+          },
+          "gt0053": {
+            "id": "gt0053",
+            "text": "Total score",
+            "description": "*"
+          },
+          "gt0054": {
+            "id": "gt0054",
+            "text": "Set MI present"
+          },
+          "gt0055": {
+            "id": "gt0055",
+            "text": "Set CHF present"
+          },
+          "gt0056": {
+            "id": "gt0056",
+            "text": "Set Pd present"
+          },
+          "gt0057": {
+            "id": "gt0057",
+            "text": "Set Cd present"
+          },
+          "gt0058": {
+            "id": "gt0058",
+            "text": "Set Dementia present"
+          },
+          "gt0059": {
+            "id": "gt0059",
+            "text": "Set CPD present"
+          },
+          "gt0060": {
+            "id": "gt0060",
+            "text": "Set CTD present"
+          },
+          "gt0061": {
+            "id": "gt0061",
+            "text": "Set PUD present"
+          },
+          "gt0062": {
+            "id": "gt0062",
+            "text": "Set MLD present"
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "Set Diabetes without eod present"
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "text": "Set Hemiplegia present"
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "text": "Set m/s RD present"
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "Moderate or severe renal disease",
+            "description": "Moderate or severe renal disease"
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "Set Diabetes with eod present"
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "Diabetes with end-organ damage",
+            "description": "Diabetes with end-organ damage (retinopathy, neuropathy, nephropathy or brittle diabetes)"
+          },
+          "gt0069": {
+            "id": "gt0069",
+            "text": "Set Tumor present"
+          },
+          "gt0070": {
+            "id": "gt0070",
+            "text": "Set Leukemia present"
+          },
+          "gt0071": {
+            "id": "gt0071",
+            "text": "Set Lymphoma present"
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "text": "Set m/s LD present"
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "text": "Set Metastatic tumor present"
+          },
+          "gt0074": {
+            "id": "gt0074",
+            "text": "Set AIDS present"
+          },
+          "gt0075": {
+            "id": "gt0075",
+            "text": "Calculate total score"
+          }
+        }
+      }
+    },
+    "term_bindings": {
+      "ICD10": {
+        "id": "ICD10",
+        "bindings": {
+          "gt0007": {
+            "codes": [
+              "ICD10::F00",
+              "ICD10::F01",
+              "ICD10::F02",
+              "ICD10::F03",
+              "ICD10::F05.1",
+              "ICD10::G30",
+              "ICD10::G31.1"
+            ],
+            "uri": ", "
+          },
+          "gt0018": {
+            "codes": [
+              "ICD10::C81",
+              "ICD10::C82",
+              "ICD10::C83",
+              "ICD10::C84",
+              "ICD10::C85",
+              "ICD10::C86",
+              "ICD10::C88",
+              "ICD10::C90"
+            ]
+          },
+          "gt0008": {
+            "codes": [
+              "ICD10::I27.8",
+              "ICD10::I27.9",
+              "ICD10::J40",
+              "ICD10::J41",
+              "ICD10::J42",
+              "ICD10::J43",
+              "ICD10::J44",
+              "ICD10::J45",
+              "ICD10::J46",
+              "ICD10::J47",
+              "ICD10::J60",
+              "ICD10::J61",
+              "ICD10::J62",
+              "ICD10::J63",
+              "ICD10::J64",
+              "ICD10::J65",
+              "ICD10::J66",
+              "ICD10::J67",
+              "ICD10::J68.4",
+              "ICD10::J70.1",
+              "ICD10::J70.3"
+            ]
+          },
+          "gt0019": {
+            "codes": [
+              "ICD10::I85.0",
+              "ICD10::I85.9",
+              "ICD10::I86.4",
+              "ICD10::I98.2",
+              "ICD10::K70.4",
+              "ICD10::K71.1",
+              "ICD10::K72.1",
+              "ICD10::K72.9",
+              "ICD10::K76.5",
+              "ICD10::K76.6",
+              "ICD10::K76.7"
+            ]
+          },
+          "gt0009": {
+            "codes": [
+              "ICD10::M05",
+              "ICD10::M06",
+              "ICD10::M31.5",
+              "ICD10::M32",
+              "ICD10::M33",
+              "ICD10::M34",
+              "ICD10::M35.1",
+              "ICD10::M35.3",
+              "ICD10::M36.0"
+            ]
+          },
+          "gt0003": {
+            "codes": [
+              "ICD10::I21",
+              "ICD10::I22",
+              "ICD10::125.2"
+            ]
+          },
+          "gt0014": {
+            "codes": [
+              "ICD10::I12.0",
+              "ICD10::I13.1",
+              "ICD10::N03.2",
+              "ICD10::N03.3",
+              "ICD10::N03.4",
+              "ICD10::N03.5",
+              "ICD10::N03.6",
+              "ICD10::N03.7",
+              "ICD10::N05.2",
+              "ICD10::N05.3",
+              "ICD10::N05.4",
+              "ICD10::N05.5",
+              "ICD10::N05.6",
+              "ICD10::N05.7",
+              "ICD10::N18",
+              "ICD10::N19",
+              "ICD10::N25.0",
+              "ICD10::Z49.0",
+              "ICD10::Z49.1",
+              "ICD10::Z49.2",
+              "ICD10::Z94.0",
+              "ICD10::Z99.2"
+            ]
+          },
+          "gt0004": {
+            "codes": [
+              "ICD10::I09.9",
+              "ICD10::I11.0",
+              "ICD10::I13.0",
+              "ICD10::I13.2",
+              "ICD10::I25.5",
+              "ICD10::I42.0",
+              "ICD10::I42.5",
+              "ICD10::I42.6",
+              "ICD10::I42.7",
+              "ICD10::I42.8",
+              "ICD10::I42.9",
+              "ICD10::I43",
+              "ICD10::I50",
+              "ICD10::P29.0"
+            ]
+          },
+          "gt0015": {
+            "codes": [
+              "ICD10::E10.2",
+              "ICD10::E10.3",
+              "ICD10::E10.4",
+              "ICD10::E10.5",
+              "ICD10::E10.7",
+              "ICD10::E11.2",
+              "ICD10::E11.3",
+              "ICD10::E11.4",
+              "ICD10::E11.5",
+              "ICD10::E11.7",
+              "ICD10::E12.2",
+              "ICD10::E12.3",
+              "ICD10::E12.4",
+              "ICD10::E12.5",
+              "ICD10::E12.7",
+              "ICD10::E13.2",
+              "ICD10::E13.2",
+              "ICD10::E13.4",
+              "ICD10::E13.5",
+              "ICD10::E13.7",
+              "ICD10::E14.2",
+              "ICD10::E14.3",
+              "ICD10::E14.4",
+              "ICD10::E14.5",
+              "ICD10::E14.7"
+            ]
+          },
+          "gt0005": {
+            "codes": [
+              "ICD10::I70",
+              "ICD10::I71",
+              "ICD10::I73.1",
+              "ICD10::I73.8",
+              "ICD10::I73.9",
+              "ICD10::I77.1",
+              "ICD10::I79.0",
+              "ICD10::I79.2",
+              "ICD10::K55.1",
+              "ICD10::K55.8",
+              "ICD10::K55.9",
+              "ICD10::Z95.8",
+              "ICD10::Z95.9"
+            ]
+          },
+          "gt0016": {
+            "codes": [
+              "ICD10::C00 - C26",
+              "ICD10::C30 - C34",
+              "ICD10::C37 - C41",
+              "ICD10::C43",
+              "ICD10::C45 - C58",
+              "ICD10::C60 - C76",
+              "ICD10::C96",
+              "ICD10::C97"
+            ]
+          },
+          "gt0006": {
+            "codes": [
+              "ICD10::G45",
+              "ICD10::G46",
+              "ICD10::H34.0",
+              "ICD10::I60",
+              "ICD10::I61",
+              "ICD10::I62",
+              "ICD10::I63",
+              "ICD10::I64",
+              "ICD10::I65",
+              "ICD10::I66",
+              "ICD10::I67",
+              "ICD10::I68",
+              "ICD10::I69"
+            ]
+          },
+          "gt0017": {
+            "codes": [
+              "ICD10::C91",
+              "ICD10::C92",
+              "ICD10::C93",
+              "ICD10::C94",
+              "ICD10::C95"
+            ]
+          },
+          "gt0010": {
+            "codes": [
+              "ICD10::K25",
+              "ICD10::K26",
+              "ICD10::K27",
+              "ICD10::K28"
+            ]
+          },
+          "gt0021": {
+            "codes": [
+              "ICD10::B20",
+              "ICD10::B21",
+              "ICD10::B22",
+              "ICD10::B23",
+              "ICD10::B24"
+            ]
+          },
+          "gt0011": {
+            "codes": [
+              "ICD10::B18",
+              "ICD10::K70.0",
+              "ICD10::K70.1",
+              "ICD10::K70.2",
+              "ICD10::K70.3",
+              "ICD10::K70.9",
+              "ICD10::K71.3",
+              "ICD10::K71.4",
+              "ICD10::K71.5",
+              "ICD10::K71.7",
+              "ICD10::K73",
+              "ICD10::K74",
+              "ICD10::K76.0",
+              "ICD10::K76.2",
+              "ICD10::K76.3",
+              "ICD10::K76.4",
+              "ICD10::K76.8",
+              "ICD10::K76.9",
+              "ICD10::Z94.4"
+            ]
+          },
+          "gt0012": {
+            "codes": [
+              "ICD10::E10.0",
+              "ICD10::E10.1",
+              "ICD10::E10.6",
+              "ICD10::E10.8",
+              "ICD10::E10.9",
+              "ICD10::E11.0",
+              "ICD10::E11.1",
+              "ICD10::E11.6",
+              "ICD10::E11.8",
+              "ICD10::E11.9",
+              "ICD10::E12.0",
+              "ICD10::E12.1",
+              "ICD10::E12.6",
+              "ICD10::E12.8",
+              "ICD10::E12.9",
+              "ICD10::E13.0",
+              "ICD10::E13.1",
+              "ICD10::E13.6",
+              "ICD10::E13.8",
+              "ICD10::E13.9",
+              "ICD10::E14.0",
+              "ICD10::E14.1",
+              "ICD10::E14.6",
+              "ICD10::E14.8",
+              "ICD10::E14.9"
+            ]
+          },
+          "gt0013": {
+            "codes": [
+              "ICD10::G04.1",
+              "ICD10::G11.4",
+              "ICD10::G80.1",
+              "ICD10::G80.2",
+              "ICD10::G81",
+              "ICD10::G82",
+              "ICD10::G83.0",
+              "ICD10::G83.1",
+              "ICD10::G83.2",
+              "ICD10::G83.3",
+              "ICD10::G83.4",
+              "ICD10::G83.9"
+            ]
+          },
+          "gt0020": {
+            "codes": [
+              "ICD10::C77",
+              "ICD10::C78",
+              "ICD10::C79",
+              "ICD10::C80"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
