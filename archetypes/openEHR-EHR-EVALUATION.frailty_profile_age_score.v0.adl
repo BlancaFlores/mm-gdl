@@ -1,10 +1,18 @@
 archetype (adl_version=1.4)
-	openEHR-EHR-EVALUATION.frailty_profile_age.v0
+	openEHR-EHR-EVALUATION.frailty_profile_age_score.v0
 
 concept
-	[at0000]	-- Frailty profile age score
+	[at0000]	-- *Frailty profile age score(en)
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Blanca Flores">
@@ -20,24 +28,31 @@ description
 			misuse = <"">
 			copyright = <"">
 		>
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"*To record the age score assigned for newly diagnosed Multiple Myeloma patients, which is used to calculate the frailty profile. (en)">
+			use = <"*Use to record the age score for newly diagnosed Multiple Myeloma patients.(en)">
+			misuse = <"*(en)">
+			copyright = <"*(en)">
+		>
 	>
 	lifecycle_state = <"0">
 	other_contributors = <>
 	other_details = <
 		["references"] = <"A. Palumbo et al., “Geriatric assessment predicts survival and toxicities in elderly myeloma patients: An International Myeloma Working Group report,” Blood, vol. 13, pp. 2068–2074, 2015.">
-		["MD5-CAM-1.0.1"] = <"2994A4DB6B21B550FA698E1A2B84E9FB">
+		["MD5-CAM-1.0.1"] = <"BF2D02C7E3F328E4265B4B123A6477A8">
 	>
 
 definition
-	EVALUATION[at0000] matches {	-- Frailty profile age score
+	EVALUATION[at0000] matches {	-- *Frailty profile age score(en)
 		data matches {
-			ITEM_TREE[at0001] matches {	-- Tree
+			ITEM_TREE[at0001] matches {	-- *Tree(en)
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Age score
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Alterspunktzahl
 						value matches {
-							0|[local::at0003], 	-- 75 or under
+							0|[local::at0003], 	-- 75 oder weniger
 							1|[local::at0004], 	-- 76 - 80
-							2|[local::at0005]  	-- Above 80
+							2|[local::at0005]  	-- Über 80
 						}
 					}
 				}
@@ -71,6 +86,34 @@ ontology
 				>
 				["at0005"] = <
 					text = <"Above 80">
+					description = <"*">
+				>
+			>
+		>
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Frailty profile age score(en)">
+					description = <"*unknown(en)">
+				>
+				["at0001"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"Alterspunktzahl">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"75 oder weniger">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"76 - 80">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Über 80">
 					description = <"*">
 				>
 			>

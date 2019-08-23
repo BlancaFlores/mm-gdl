@@ -5,6 +5,14 @@ concept
 	[at0000]	-- Frailty profile multiple myeloma
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Blanca Flores">
@@ -13,6 +21,14 @@ description
 		["date"] = <"2019-04-15">
 	>
 	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"*To calculate the frailty profile in multiple myeloma elderly patients, after ADL, IADL, CCI and age have been assessed, and determine the feasibility of a treatment regimen.(en)">
+			use = <"*Use to record the frailty profile in multiple myeloma elderly patients, based on ADL, IADL, CCI and age assessments. The IMWG proposed to use the frailty profile as an additional tool for clinical evaluation in clinical practice , as well as for the measurement of frailty in designing future clinical trials to ensure adequate representation of elderly patients.(en)">
+			keywords = <"*geriatric assessment(en)", "*frailty(en)", "*multiple myeloma(en)", "*elderly patients(en)">
+			misuse = <"*Do not use to record the frailty score for patients who are diagnosed with a disease other than multiple myeloma, or for non-elderly patients. (en)">
+			copyright = <"*(en)">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To calculate the frailty profile in multiple myeloma elderly patients, after ADL, IADL, CCI and age have been assessed, and determine the feasibility of a treatment regimen.">
@@ -25,8 +41,8 @@ description
 	lifecycle_state = <"AuthorDraft">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"B6D7F4C518F6C7A5070265EBA99FB2DF">
 		["references"] = <"A. Palumbo et al., “Geriatric assessment predicts survival and toxicities in elderly myeloma patients: An International Myeloma Working Group report,” Blood, vol. 13, pp. 2068–2074, 2015.">
+		["MD5-CAM-1.0.1"] = <"B8C9B308365ED703D0612C1492F8F1F1">
 	>
 
 definition
@@ -161,6 +177,90 @@ ontology
 				["at0019"] = <
 					text = <"<= 5">
 					description = <"*">
+				>
+			>
+		>
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Frailty profile multiple myeloma(en)">
+					description = <"*The International Myeloma Working group (IMWG) proposed a frailty score in 2015, to predict mortality and risk of toxicity in elderly multiple myeloma patients. It relies on patient age and the resulting scores from three validated assessment tools: the Katz Activities of Daily Living scale (ADL), the Lawton Instrumental Activies of Daily Living (IADL) scale and the Charlson Comorbidity Index (CCI). The frailty score was built combining age, ADL, IADL and CCI, evaluating their prognostic role on overall-survival. The frailty score ranges from 0-5 points, and is used to define the frailty profile in elderly patients, which corresponds to 3 risk groups: fit, intermediate fitness or frail. The 3-year overall survival was 84% in fit, 76% in intermediate-fitness and 57% in frail.(en)">
+				>
+				["at0001"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"Alterspunktzahl">
+					description = <"**(en)">
+				>
+				["at0003"] = <
+					text = <"*75 or under(en)">
+					description = <"**(en)">
+				>
+				["at0004"] = <
+					text = <"*76 - 80(en)">
+					description = <"**(en)">
+				>
+				["at0005"] = <
+					text = <"ADL Punktzahl">
+					description = <"**(en)">
+				>
+				["at0006"] = <
+					text = <"*Above 80(en)">
+					description = <"**(en)">
+				>
+				["at0007"] = <
+					text = <"*> 4(en)">
+					description = <"**(en)">
+				>
+				["at0008"] = <
+					text = <"IADL Punktzahl">
+					description = <"**(en)">
+				>
+				["at0009"] = <
+					text = <"*<= 4(en)">
+					description = <"**(en)">
+				>
+				["at0010"] = <
+					text = <"CCI Punktzahl">
+					description = <"**(en)">
+				>
+				["at0011"] = <
+					text = <"*<= 1(en)">
+					description = <"**(en)">
+				>
+				["at0012"] = <
+					text = <"*>= 2(en)">
+					description = <"**(en)">
+				>
+				["at0013"] = <
+					text = <"Gebrechlichkeit Punktzahl">
+					description = <"**(en)">
+				>
+				["at0014"] = <
+					text = <"Patientenstatus">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Fit">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Intermediate Fit">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Gebrechlich">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"*> 5(en)">
+					description = <"**(en)">
+				>
+				["at0019"] = <
+					text = <"*<= 5(en)">
+					description = <"**(en)">
 				>
 			>
 		>

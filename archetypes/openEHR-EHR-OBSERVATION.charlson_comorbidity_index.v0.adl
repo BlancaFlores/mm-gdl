@@ -5,6 +5,16 @@ concept
 	[at0000]	-- Charlson comorbidity index
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			author = <
+				["name"] = <"Blanca Flores">
+				["email"] = <"blanca.flores@med.uni-heidelberg.de">
+				["organisation"] = <"Heidelberg University">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"Blanca Flores">
@@ -13,6 +23,14 @@ description
 		["date"] = <"2019-05-13">
 	>
 	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Der CKI schätzt die einjährige Mortalität und bewertet die Anzahl und den Schweregrad von Komorbiditäten.">
+			use = <"Erfassung des Vorhandenseins und des Schweregrads von Komorbiditäten mit einem Gewicht zwischen 1 und 6 je nach Schweregrad. Die Punktzahl kann zwischen 0 und 37 liegen.">
+			keywords = <"Komorbiditäten", "CKI">
+			misuse = <"Nicht zur Beurteilung von Komorbiditäten verwenden, die nicht von der CKI definiert wurden.">
+			copyright = <"*">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"The CCI estimates the one-year mortality from comorbid diseases, by assessing the number and severity of comorbidities in a patient.">
@@ -26,7 +44,7 @@ description
 	other_contributors = <>
 	other_details = <
 		["references"] = <"M. E. Charlson, P. Pompei, K. L. Ales, and C. R. MacKenzie, “A new method of classifying prognostic comorbidity in longitudinal studies: Development and validation,” J. Chronic Dis., 1987.">
-		["MD5-CAM-1.0.1"] = <"C7AFDF29A2587FE15684793DEB881BD9">
+		["MD5-CAM-1.0.1"] = <"2147660D1FC94348A3CDA2EB43D8C547">
 	>
 
 definition
@@ -418,6 +436,258 @@ ontology
 				>
 				["at0063"] = <
 					text = <"Present">
+					description = <"*">
+				>
+			>
+		>
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"Charlson Komorbiditätsindex">
+					description = <"Der Charlson Komorbiditäts Index (CKI) bewertet das Vorhandensein und den Schweregrad von Komorbiditäten, um die einjährige Mortalität eines Patienten vorherzusagen. Es werden neunzehn Krankheiten berücksichtigt und je nach Schweregrad ein Wert zwischen 1 und 6 vergeben.">
+				>
+				["at0001"] = <
+					text = <"*Event Series(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"*Any event(en)">
+					description = <"**(en)">
+				>
+				["at0003"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0006"] = <
+					text = <"Herzinfarkt">
+					description = <"Patienten mit Hospitalisierung wegen elektrokardiographisch und/oder enzymatisch nachgewiesenem Herzinfark">
+				>
+				["at0007"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Herzinsuffizienz">
+					description = <" Patienten mit nächtlicher oder durch Anstrengung induzierte Dyspnoe mit Besserung der Symptomatik unter Therapie.">
+				>
+				["at0010"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Periphere arterielle Verschlußkrankheit">
+					description = <"mit thorakalen Aortenaneurysma > 6cm">
+				>
+				["at0013"] = <
+					text = <"cerebrovaskuläre Erkrankungen">
+					description = <"Patienten mit TIA oder Apoplex ohne schwerwiegenden Residuen">
+				>
+				["at0014"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Demenz">
+					description = <"Patienten mit chronischem kognitiven Defizit">
+				>
+				["at0017"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Chronische Lungenerkrankung">
+					description = <"Patienten mit pulmonal bedingter Dyspnoe bei leichter oder mäßig schwerer Belastung ohne Therapie oder Patienten mit anfallsweiser Dyspnoe (Asthma)">
+				>
+				["at0020"] = <
+					text = <"Kollagenose">
+					description = <"Polymyalgie rheumatica, Lupus erythematodes, schwere rheumatoide Arthritis, Polymyositis">
+				>
+				["at0021"] = <
+					text = <"Ulkuskrankheit">
+					description = <"Patienten die bereits einmal wegen Ulcera behandelt wurden">
+				>
+				["at0022"] = <
+					text = <"Leichte Lebererkrankung">
+					description = <"Leberzirrhose ohne portale Hypertonie">
+				>
+				["at0023"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Diabetes mellitus (ohne Endorganschäden)">
+					description = <"Patienten mit Diab. mell. und medikamentöser Therapie">
+				>
+				["at0031"] = <
+					text = <"Hemiplegie">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Mäßig schwere und schwere Nierenerkrankung">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Diabetes mellitus mit Endorganschäden">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Tumorerkrankung">
+					description = <"Sämtliche solide Tumore ohne Metastasennachweis innerhalb der letzten fünf Jahre ">
+				>
+				["at0041"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"Leukämie">
+					description = <"Akute und chronische Leukosen">
+				>
+				["at0044"] = <
+					text = <"Lymphom">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"Mäßig schwere und schwere Lebererkrankung">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Metastasierter solider Tumor">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"AIDS">
+					description = <"AIDS (nicht nur HIV-positiv)">
+				>
+				["at0054"] = <
+					text = <"Gesamtpunktzahl">
+					description = <"*">
+				>
+				["at0055"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0059"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"Vorhanden">
+					description = <"*">
+				>
+				["at0062"] = <
+					text = <"Nicht vorhanden">
+					description = <"*">
+				>
+				["at0063"] = <
+					text = <"Vorhanden">
 					description = <"*">
 				>
 			>
