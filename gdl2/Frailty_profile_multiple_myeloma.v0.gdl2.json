@@ -35,8 +35,8 @@
     "data_bindings": {
       "gt0007": {
         "id": "gt0007",
-        "model_id": "openEHR-EHR-EVALUATION.frailty_profile_multiple_myeloma.v0",
-        "template_id": "openEHR-EHR-EVALUATION.frailty_profile_multiple_myeloma.v0",
+        "model_id": "openEHR-EHR-EVALUATION.frailty_profile_mm.v0",
+        "template_id": "openEHR-EHR-EVALUATION.frailty_profile_mm.v0",
         "type": "OUTPUT",
         "elements": {
           "gt0008": {

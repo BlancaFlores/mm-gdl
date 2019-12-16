@@ -1,0 +1,483 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-EVALUATION.mutiple_myeloma_diagnosis_criteria.v0
+
+concept
+	[at0000]	-- Mutiple myeloma diagnosis criteria
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Blanca Flores">
+		["email"] = <"blanca.flores@stud.uni-heidelberg.de">
+		["organisation"] = <"Heidelberg University">
+		["date"] = <"2019-11-13">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To register the diagnostic criteria of Multiple Myeloma.">
+			use = <"">
+			misuse = <"Not to be used to register diagnostic criteria other than for Multiple Myeloma. ">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"P. Moreau et al. Multiple Myeloma: ESMO Clinical Practice Guidelines for diagnosis, treatment and follow-up. (2017)">
+		["MD5-CAM-1.0.1"] = <"906E656F8359EFB29BF9CDA32AB44255">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- Mutiple myeloma diagnosis criteria
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0010] occurrences matches {0..1} matches {	-- Clonal BM plasma cells %
+						value matches {
+							0|[local::at0037], 	-- < 10%
+							1|[local::at0038], 	-- >= 10%
+							2|[local::at0070]  	-- >= 60%
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {	-- Plasmacytoma
+						value matches {
+							0|[local::at0039], 	-- Absent
+							1|[local::at0040]  	-- Present
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Renal Insufficiency
+						value matches {
+							0|[local::at0041], 	-- Absent
+							1|[local::at0042]  	-- Present
+						}
+					}
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Hypercalcaemia
+						value matches {
+							0|[local::at0043], 	-- Absent
+							1|[local::at0044]  	-- Present
+						}
+					}
+					ELEMENT[at0004] occurrences matches {0..1} matches {	-- Anaemia
+						value matches {
+							0|[local::at0045], 	-- Absent
+							1|[local::at0046]  	-- Present
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {	-- Bone lesions >= 1
+						value matches {
+							0|[local::at0047], 	-- Absent
+							1|[local::at0048]  	-- Present
+						}
+					}
+					ELEMENT[at0072] occurrences matches {0..1} matches {	-- Serum FLC ratio >= 100
+						value matches {
+							0|[local::at0073], 	-- Absent
+							1|[local::at0074]  	-- Present
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {	-- Evidence of end organ damage
+						value matches {
+							0|[local::at0049], 	-- Absent
+							1|[local::at0050]  	-- Present
+						}
+					}
+					ELEMENT[at0075] occurrences matches {0..1} matches {	-- Focal lesion on MRI studies >=1
+						value matches {
+							0|[local::at0076], 	-- Absent
+							1|[local::at0077]  	-- Present
+						}
+					}
+					ELEMENT[at0036] occurrences matches {0..1} matches {	-- Biomarkers of malignancy
+						value matches {
+							0|[local::at0051], 	-- Absent
+							1|[local::at0052]  	-- Present
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {	-- Multiple Myeloma diagnosis
+						value matches {
+							0|[local::at0053], 	-- Absent
+							1|[local::at0054]  	-- Present
+						}
+					}
+					CLUSTER[at0069] occurrences matches {0..1} matches {	-- Conditions descriptions
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0011] occurrences matches {0..1} matches {	-- Calcium
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0012, 	-- greater than 2.75 mmol/l
+											at0013]	-- less than or equal to 2.75 mmol/l
+										}
+									}
+								}
+							}
+							ELEMENT[at0014] occurrences matches {0..1} matches {	-- CrCl
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0015, 	-- less than 40 ml/min
+											at0016]	-- greater than or equal to 40 ml/min
+										}
+									}
+								}
+							}
+							ELEMENT[at0017] occurrences matches {0..1} matches {	-- Creatinine
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0018, 	-- greater than 177 umol/l (or 2 mg/dL)
+											at0019]	-- less than or equal to 177 umol/l (or 2 mg/dL)
+										}
+									}
+								}
+							}
+							ELEMENT[at0020] occurrences matches {0..1} matches {	-- Haemoglobin
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0021, 	-- less than 100 gm/l
+											at0022]	-- greater than or equal to100 gm/l
+										}
+									}
+								}
+							}
+							ELEMENT[at0023] occurrences matches {0..1} matches {	-- Osteolytic lesions
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0024, 	-- none
+											at0025]	-- one or more
+										}
+									}
+								}
+							}
+							ELEMENT[at0026] occurrences matches {0..1} matches {	-- Clonal BM plasma cells
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0027, 	-- less than 10%
+											at0028, 	-- more than or equal to 10%
+											at0029]	-- more than or equal to 60%
+										}
+									}
+								}
+							}
+							ELEMENT[at0030] occurrences matches {0..1} matches {	-- Involved/uninvolved serum-FLC ratio
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0031, 	-- less than 100
+											at0032]	-- greater than or equal to 100
+										}
+									}
+								}
+							}
+							ELEMENT[at0033] occurrences matches {0..1} matches {	-- Focal lesions on MRI studies (size >= 5mm)
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0034, 	-- none
+											at0035]	-- one or more
+										}
+									}
+								}
+							}
+							ELEMENT[at0055] occurrences matches {0..1} matches {	-- Diagnosis of Plasmacytoma
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0056, 	-- Biopsy-proven bony plasmacytoma
+											at0057, 	-- Extramedullary plasmacytoma
+											at0058]	-- Absent
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Mutiple myeloma diagnosis criteria">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Hypercalcaemia">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Renal Insufficiency">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Anaemia">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Bone lesions >= 1">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Evidence of end organ damage">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Plasmacytoma">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Multiple Myeloma diagnosis">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Clonal BM plasma cells %">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Calcium">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"greater than 2.75 mmol/l">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"less than or equal to 2.75 mmol/l">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"CrCl">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"less than 40 ml/min">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"greater than or equal to 40 ml/min">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Creatinine">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"greater than 177 umol/l (or 2 mg/dL)">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"less than or equal to 177 umol/l (or 2 mg/dL)">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Haemoglobin">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"less than 100 gm/l">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"greater than or equal to100 gm/l">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Osteolytic lesions">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"none">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"one or more">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Clonal BM plasma cells">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"less than 10%">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"more than or equal to 10%">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"more than or equal to 60%">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Involved/uninvolved serum-FLC ratio">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"less than 100">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"greater than or equal to 100">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Focal lesions on MRI studies (size >= 5mm)">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"none">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"one or more">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Biomarkers of malignancy">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"< 10%">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <">= 10%">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0054"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0055"] = <
+					text = <"Diagnosis of Plasmacytoma">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"Biopsy-proven bony plasmacytoma">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"Extramedullary plasmacytoma">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0069"] = <
+					text = <"Conditions descriptions">
+					description = <"*">
+				>
+				["at0070"] = <
+					text = <">= 60%">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"Serum FLC ratio >= 100">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0074"] = <
+					text = <"Present">
+					description = <"*">
+				>
+				["at0075"] = <
+					text = <"Focal lesion on MRI studies >=1">
+					description = <"*">
+				>
+				["at0076"] = <
+					text = <"Absent">
+					description = <"*">
+				>
+				["at0077"] = <
+					text = <"Present">
+					description = <"*">
+				>
+			>
+		>
+	>

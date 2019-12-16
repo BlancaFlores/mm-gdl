@@ -57,65 +57,65 @@ definition
 								items cardinality matches {0..*; unordered} matches {
 									ELEMENT[at0015] occurrences matches {0..*} matches {	-- Telefon
 										value matches {
-											1|[local::at0016], 	-- 1- Benutzt Telefon aus eigener Initiative, wählt Nummern
+											0|[local::at0016], 	-- 1- Benutzt Telefon aus eigener Initiative, wählt Nummern
 											1|[local::at0020], 	-- 1- Wählt einige bekannte Nummern
-											1|[local::at0021], 	-- 1- Nimmt ab, wählt aber nicht selbständig
-											0|[local::at0022]  	-- 0- Benutzt das Telefon gar nicht mehr
+											2|[local::at0021], 	-- 1- Nimmt ab, wählt aber nicht selbständig
+											3|[local::at0022]  	-- 0- Benutzt das Telefon gar nicht mehr
 										}
 									}
 									ELEMENT[at0023] occurrences matches {0..1} matches {	-- Einkaufen
 										value matches {
-											1|[local::at0024], 	-- 1- Kauft selbständig die meisten Dinge ein
-											0|[local::at0025], 	-- 0- Macht wenige Einkäufe
-											0|[local::at0026], 	-- 0- Benötigt beim Einkaufen Begleitung
-											0|[local::at0027]  	-- 0- Kann nicht einkaufen
+											0|[local::at0024], 	-- 1- Kauft selbständig die meisten Dinge ein
+											1|[local::at0025], 	-- 0- Macht wenige Einkäufe
+											2|[local::at0026], 	-- 0- Benötigt beim Einkaufen Begleitung
+											3|[local::at0027]  	-- 0- Kann nicht einkaufen
 										}
 									}
 									ELEMENT[at0028] occurrences matches {0..1} matches {	-- Kochen
 										value matches {
-											1|[local::at0029], 	-- 1- Plant und kocht die nötigen Mahlzeiten selbständig
-											0|[local::at0030], 	-- 0- Kocht nötige Mahlzeiten nur nach Vorbereitung durch Dritte
-											0|[local::at0031], 	-- 0- Kocht selbständig, hält aber benötigte Diät nicht ein
-											0|[local::at0032]  	-- 0- Benötigt vorbereitete und servierte Mahlzeiten
+											0|[local::at0029], 	-- 1- Plant und kocht die nötigen Mahlzeiten selbständig
+											1|[local::at0030], 	-- 0- Kocht nötige Mahlzeiten nur nach Vorbereitung durch Dritte
+											2|[local::at0031], 	-- 0- Kocht selbständig, hält aber benötigte Diät nicht ein
+											3|[local::at0032]  	-- 0- Benötigt vorbereitete und servierte Mahlzeiten
 										}
 									}
 									ELEMENT[at0033] occurrences matches {0..1} matches {	-- Haushalt
 										value matches {
-											1|[local::at0034], 	-- 1- Hält Haushalt in Ordnung bzw. benötigt Assistenz bei schweren Arbeiten
+											0|[local::at0034], 	-- 1- Hält Haushalt in Ordnung bzw. benötigt Assistenz bei schweren Arbeiten
 											1|[local::at0035], 	-- 1- Führt selbständig kleine Hausarbeiten aus
-											1|[local::at0036], 	-- 1- Kann kleine Hausarbeiten ausführen, aber nicht die Wohnung reinhalten
-											1|[local::at0037], 	-- 1- Benötigt Hilfe in allen Haushaltsverrichtungen
-											0|[local::at0038]  	-- 0- Kann keine täglichen Arbeiten im Haushalt mehr ausführen
+											2|[local::at0036], 	-- 1- Kann kleine Hausarbeiten ausführen, aber nicht die Wohnung reinhalten
+											3|[local::at0037], 	-- 1- Benötigt Hilfe in allen Haushaltsverrichtungen
+											4|[local::at0038]  	-- 0- Kann keine täglichen Arbeiten im Haushalt mehr ausführen
 										}
 									}
 									ELEMENT[at0039] occurrences matches {0..1} matches {	-- Wäsche
 										value matches {
-											1|[local::at0040], 	-- 1- Wäscht sämtliche eigene Wäsche
+											0|[local::at0040], 	-- 1- Wäscht sämtliche eigene Wäsche
 											1|[local::at0041], 	-- 1- Wäscht kleine Sachen
-											0|[local::at0042]  	-- 0- Gesamte Wäsche muss fremdorganisiert werden
+											2|[local::at0042]  	-- 0- Gesamte Wäsche muss fremdorganisiert werden
 										}
 									}
 									ELEMENT[at0043] occurrences matches {0..1} matches {	-- Verkehrsmittel
 										value matches {
-											1|[local::at0044], 	-- 1- Benutzt unabhängig öffentliche Verkehrsmittel, eigenes Auto
+											0|[local::at0044], 	-- 1- Benutzt unabhängig öffentliche Verkehrsmittel, eigenes Auto
 											1|[local::at0045], 	-- 1- Bestellt und benutzt das Taxi, aber keine öffentlichen Verkehrsmittel
-											1|[local::at0046], 	-- 1- Benutzt öffentliche Verkehrsmittel in Begleitung
-											0|[local::at0047], 	-- 0- In beschränktem Umfang Fahrten im Taxi oder Auto in Begleitung
-											0|[local::at0048]  	-- 0- Benutzt überhaupt keine Verkehrsmittel mehr
+											2|[local::at0046], 	-- 1- Benutzt öffentliche Verkehrsmittel in Begleitung
+											3|[local::at0047], 	-- 0- In beschränktem Umfang Fahrten im Taxi oder Auto in Begleitung
+											4|[local::at0048]  	-- 0- Benutzt überhaupt keine Verkehrsmittel mehr
 										}
 									}
 									ELEMENT[at0049] occurrences matches {0..1} matches {	-- Medikamente
 										value matches {
-											1|[local::at0050], 	-- 1- Nimmt Medikamente selbständig zur richtigen Zeit in richtiger Dosierung
-											0|[local::at0051], 	-- 0- Nimmt vorbereitete Medikamente korrekt
-											0|[local::at0052]  	-- 0- Kann Medikamente nicht mehr korrekt einnehmen
+											0|[local::at0050], 	-- 1- Nimmt Medikamente selbständig zur richtigen Zeit in richtiger Dosierung
+											1|[local::at0051], 	-- 0- Nimmt vorbereitete Medikamente korrekt
+											2|[local::at0052]  	-- 0- Kann Medikamente nicht mehr korrekt einnehmen
 										}
 									}
 									ELEMENT[at0053] occurrences matches {0..1} matches {	-- Geldgeschäfte
 										value matches {
-											1|[local::at0054], 	-- 1- Regelt Geldeschäfte selbständig (Budget/Überweisungen/Gang zur Bank)
+											0|[local::at0054], 	-- 1- Regelt Geldeschäfte selbständig (Budget/Überweisungen/Gang zur Bank)
 											1|[local::at0055], 	-- 1- Erledigt täglich kleine Ausgaben; benötigt Hilfe bei Bankgeschäften
-											0|[local::at0056]  	-- 0- Kann nicht mehr mit Geld umgehen
+											2|[local::at0056]  	-- 0- Kann nicht mehr mit Geld umgehen
 										}
 									}
 									ELEMENT[at0057] occurrences matches {0..1} matches {	-- Gesamtpunktzahl

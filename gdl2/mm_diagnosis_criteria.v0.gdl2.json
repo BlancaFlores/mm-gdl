@@ -1,0 +1,798 @@
+{
+  "id": "mm_diagnosis_criteria.v0",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2019-11-25",
+      "name": "Blanca Flores",
+      "organisation": "University Heidelberg",
+      "email": "blanca.flores@stud.uni-heidelberg.de"
+    },
+    "lifecycle_state": "Not set",
+    "details": {
+      "en": {
+        "id": "en"
+      }
+    },
+    "other_details": {}
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0003": {
+        "id": "gt0003",
+        "model_id": "openEHR-EHR-OBSERVATION.laboratory_test_result.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.laboratory_test_result.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0004": {
+            "id": "gt0004",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.laboratory_test_panel_mm_mrd.v0]/items[at0001]/items[at0004]"
+          }
+        }
+      },
+      "gt0018": {
+        "id": "gt0018",
+        "model_id": "openEHR-EHR-EVALUATION.mutiple_myeloma_diagnosis_criteria.v0",
+        "template_id": "openEHR-EHR-EVALUATION.mutiple_myeloma_diagnosis_criteria.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0027": {
+            "id": "gt0027",
+            "path": "/data[at0001]/items[at0010]"
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "path": "/data[at0001]/items[at0007]"
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "path": "/data[at0001]/items[at0003]"
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "path": "/data[at0001]/items[at0002]"
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "path": "/data[at0001]/items[at0004]"
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "path": "/data[at0001]/items[at0005]"
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "path": "/data[at0001]/items[at0006]"
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "path": "/data[at0001]/items[at0036]"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "path": "/data[at0001]/items[at0008]"
+          },
+          "gt0089": {
+            "id": "gt0089",
+            "path": "/data[at0001]/items[at0075]"
+          },
+          "gt0090": {
+            "id": "gt0090",
+            "path": "/data[at0001]/items[at0072]"
+          },
+          "gt0102": {
+            "id": "gt0102",
+            "path": "/data[at0001]/items[at0069]/items[at0055]"
+          },
+          "gt0103": {
+            "id": "gt0103",
+            "path": "/data[at0001]/items[at0069]/items[at0011]"
+          },
+          "gt0104": {
+            "id": "gt0104",
+            "path": "/data[at0001]/items[at0069]/items[at0014]"
+          },
+          "gt0105": {
+            "id": "gt0105",
+            "path": "/data[at0001]/items[at0069]/items[at0017]"
+          },
+          "gt0106": {
+            "id": "gt0106",
+            "path": "/data[at0001]/items[at0069]/items[at0020]"
+          },
+          "gt0107": {
+            "id": "gt0107",
+            "path": "/data[at0001]/items[at0069]/items[at0023]"
+          },
+          "gt0108": {
+            "id": "gt0108",
+            "path": "/data[at0001]/items[at0069]/items[at0026]"
+          },
+          "gt0109": {
+            "id": "gt0109",
+            "path": "/data[at0001]/items[at0069]/items[at0030]"
+          },
+          "gt0110": {
+            "id": "gt0110",
+            "path": "/data[at0001]/items[at0069]/items[at0033]"
+          }
+        }
+      },
+      "gt0041": {
+        "id": "gt0041",
+        "model_id": "openEHR-EHR-OBSERVATION.laboratory_test_result.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.laboratory_test_result.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0042": {
+            "id": "gt0042",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.laboratory_test_panel_cbc.v0]/items[at0001]/items[at0004]"
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.laboratory_test_panel_basic_metabolic.v0]/items[at0003]/items[at0011]"
+          },
+          "gt0053": {
+            "id": "gt0053",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.laboratory_test_panel_basic_metabolic.v0]/items[at0005]/items[at0012]"
+          }
+        }
+      },
+      "gt0045": {
+        "id": "gt0045",
+        "model_id": "openEHR-EHR-OBSERVATION.laboratory_test_result.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.laboratory_test_result.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0047": {
+            "id": "gt0047",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.laboratory_test_panel_crcl.v0]/items[at0001]/items[at0004]"
+          }
+        }
+      },
+      "gt0054": {
+        "id": "gt0054",
+        "model_id": "openEHR-EHR-OBSERVATION.imaging_exam_result.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.imaging_exam_result.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0098": {
+            "id": "gt0098",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.osteolytic_lesions_result.v0]/items[at0001]/items[at0016]"
+          }
+        }
+      },
+      "gt0070": {
+        "id": "gt0070",
+        "model_id": "openEHR-EHR-EVALUATION.mutiple_myeloma_diagnosis_criteria.v0",
+        "template_id": "openEHR-EHR-EVALUATION.mutiple_myeloma_diagnosis_criteria.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0071": {
+            "id": "gt0071",
+            "path": "/data[at0001]/items[at0069]/items[at0055]"
+          }
+        }
+      },
+      "gt0096": {
+        "id": "gt0096",
+        "model_id": "openEHR-EHR-OBSERVATION.laboratory_test_result.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.laboratory_test_result.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0097": {
+            "id": "gt0097",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.laboratory_test_panel_flc.v0]/items[at0001]/items[at0037]"
+          }
+        }
+      },
+      "gt0099": {
+        "id": "gt0099",
+        "model_id": "openEHR-EHR-OBSERVATION.imaging_exam_result.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.imaging_exam_result.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0101": {
+            "id": "gt0101",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.mri_fl_result.v0]/items[at0001]/items[at0016]"
+          }
+        }
+      }
+    },
+    "default_actions": [
+      "$gt0033|Evidence of end organ damage|=0|local::at0049|Absent|",
+      "$gt0034|Biomarkers of malignancy|=0|local::at0051|Absent|",
+      "$gt0028|Plasmacytoma|=0|local::at0039|Absent|",
+      "$gt0035|Multiple Myeloma diagnosis|=0|local::at0053|Absent|",
+      "$gt0030|Hypercalcaemia|=0|local::at0043|Absent|",
+      "$gt0029|Renal Insufficiency|=0|local::at0041|Absent|",
+      "$gt0032|Bone lesions|=0|local::at0047|False|"
+    ],
+    "rules": {
+      "gt0036": {
+        "id": "gt0036",
+        "priority": 13,
+        "when": [
+          "$gt0004|clonal BM plasma cells result|>=10,%"
+        ],
+        "then": [
+          "$gt0027|Clonal BM plasma cells %|=1|local::at0038|>= 10%|",
+          "$gt0108|Clonal BM plasma cells|=local::at0028|>=10%|"
+        ]
+      },
+      "gt0072": {
+        "id": "gt0072",
+        "priority": 12,
+        "when": [
+          "($gt0071|Diagnosis of Plasmacytoma|==local::at0057|Extramedullary plasmacytoma|)||($gt0071|Diagnosis of Plasmacytoma|==local::at0056|Biopsy-proven bony plasmacytoma|)"
+        ],
+        "then": [
+          "$gt0028|Plasmacytoma|=1|local::at0040|Present|"
+        ]
+      },
+      "gt0046": {
+        "id": "gt0046",
+        "priority": 11,
+        "when": [
+          "($gt0042|Haemoglobin result|<100,gm/l)||($gt0042|Haemoglobin result|<10,gm/dl)"
+        ],
+        "then": [
+          "$gt0031|Anaemia|=1|local::at0046|Present|",
+          "$gt0106|Haemoglobin|=local::at0021|< 100 g/l|"
+        ]
+      },
+      "gt0050": {
+        "id": "gt0050",
+        "priority": 10,
+        "when": [
+          "$gt0052|Calcium result|>2.75,mmol/l"
+        ],
+        "then": [
+          "$gt0030|Hypercalcaemia|=1|local::at0044|Present|",
+          "$gt0103|Calcium|=local::at0012|> 2.75 mmol/l|"
+        ]
+      },
+      "gt0056": {
+        "id": "gt0056",
+        "priority": 9,
+        "when": [
+          "$gt0047|CrCl result|<40,ml/min"
+        ],
+        "then": [
+          "$gt0029|Renal Insufficiency|=1|local::at0042|Present|",
+          "$gt0104|CrCl|=local::at0015|< 40 ml/min|"
+        ]
+      },
+      "gt0111": {
+        "id": "gt0111",
+        "priority": 8,
+        "when": [
+          "($gt0053|Creatinine result|>177,umol/l)||($gt0053|Creatinine result|>2,mg/dl)"
+        ],
+        "then": [
+          "$gt0029|Renal Insufficiency|=1|local::at0042|Present|",
+          "$gt0105|Creatinine|=local::at0018|> 177 umol/l|"
+        ]
+      },
+      "gt0057": {
+        "id": "gt0057",
+        "priority": 7,
+        "when": [
+          "$gt0098|Osteolytic lesions|>=1"
+        ],
+        "then": [
+          "$gt0032|Bone lesions|=1|local::at0048|True|",
+          "$gt0107|Osteolytic lesions|=local::at0025|>=1|"
+        ]
+      },
+      "gt0075": {
+        "id": "gt0075",
+        "priority": 6,
+        "when": [
+          "($gt0030|Hypercalcaemia|==1|local::at0044|Present|)||(($gt0029|Renal Insufficiency|==1|local::at0042|Present|)||(($gt0032|Bone lesions|==1|local::at0048|True|)||($gt0031|Anaemia|==1|local::at0046|Present|)))"
+        ],
+        "then": [
+          "$gt0033|Evidence of end organ damage|=1|local::at0050|Present|"
+        ]
+      },
+      "gt0081": {
+        "id": "gt0081",
+        "priority": 5,
+        "when": [
+          "$gt0004|clonal BM plasma cells result|>=60,%"
+        ],
+        "then": [
+          "$gt0027|Clonal BM plasma cells %|=2|local::at0070|>= 60%|",
+          "$gt0108|Clonal BM plasma cells|=local::at0029|>= 60%|"
+        ]
+      },
+      "gt0095": {
+        "id": "gt0095",
+        "priority": 4,
+        "when": [
+          "$gt0097|FLC ratio|>=100"
+        ],
+        "then": [
+          "$gt0090|Serum FLC ratio >= 100|=1|local::at0074|True|",
+          "$gt0109|Involved/uninvolved serum-FLC ratio|=local::at0032|>= 100|"
+        ]
+      },
+      "gt0092": {
+        "id": "gt0092",
+        "priority": 3,
+        "when": [
+          "$gt0101|FLs >= 5mm|>=1"
+        ],
+        "then": [
+          "$gt0089|Focal lesion on MRI studies >=1|=1|local::at0077|True|",
+          "$gt0110|Focal lesions on MRI studies (size >= 5mm)|=local::at0035|>=1|"
+        ]
+      },
+      "gt0085": {
+        "id": "gt0085",
+        "priority": 2,
+        "when": [
+          "($gt0027|Clonal BM plasma cells %|==2|local::at0070|>= 60%|)||(($gt0089|Focal lesion on MRI studies >=1|==1|local::at0077|True|)||($gt0090|Serum FLC ratio >= 100|==1|local::at0074|True|))"
+        ],
+        "then": [
+          "$gt0034|Biomarkers of malignancy|=1|local::at0052|Present|"
+        ]
+      },
+      "gt0084": {
+        "id": "gt0084",
+        "priority": 1,
+        "when": [
+          "($gt0027|Clonal BM plasma cells %|==1|local::at0038|>= 10%|)||($gt0028|Plasmacytoma|==1|local::at0040|Present|)",
+          "$gt0033|Evidence of end organ damage|==1|local::at0050|Present|",
+          "$gt0034|Biomarkers of malignancy|==1|local::at0052|Present|",
+          "($gt0033|Evidence of end organ damage|==1|local::at0050|Present|)||($gt0034|Biomarkers of malignancy|==1|local::at0052|Present|)"
+        ],
+        "then": [
+          "$gt0035|Multiple Myeloma diagnosis|=1|local::at0054|Present|"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Diagnosis criteria multiple myeloma"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "clonal BM plasma cells result",
+            "description": "*"
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "CrCl result",
+            "description": "The value of the analyte result."
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Calcium result",
+            "description": "*"
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "text": "Creatinine serum result",
+            "description": "*"
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "Haemoglobin result",
+            "description": "The value of the analyte result."
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "FLC ratio result",
+            "description": "The value of the analyte result."
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "Plasmacytoma",
+            "description": "*"
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "Diagnosis",
+            "description": "The index diagnosis"
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "Calcium",
+            "description": "*"
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "CrCl",
+            "description": "*"
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "text": "Creatinine",
+            "description": "*"
+          },
+          "gt0022": {
+            "id": "gt0022",
+            "text": "Haemoglobin",
+            "description": "*"
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "amount of bone lesions",
+            "description": "*"
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "% of clonal BM plasma cells",
+            "description": "*"
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Involved/uninvolved serum-free light chain ratio",
+            "description": "*"
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "Focal lesions on MRI studies >= 5mm",
+            "description": "*"
+          },
+          "gt0027": {
+            "id": "gt0027",
+            "text": "Clonal BM plasma cells %",
+            "description": "*"
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Plasmacytoma",
+            "description": "*"
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "text": "Renal Insufficiency",
+            "description": "*"
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "text": "Hypercalcaemia",
+            "description": "*"
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "Anaemia",
+            "description": "*"
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "Bone lesions",
+            "description": "*"
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "Evidence of end organ damage",
+            "description": "*"
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "Biomarkers of malignancy",
+            "description": "*"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "Multiple Myeloma diagnosis",
+            "description": "*"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "Set clonal BM plasma cells to >= 10%"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "CrCl result",
+            "description": "The value of the analyte result."
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "Calcium result",
+            "description": "*"
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "Haemoglobin result",
+            "description": "The value of the analyte result."
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "Haemoglobin result",
+            "description": "The value of the analyte result."
+          },
+          "gt0043": {
+            "id": "gt0043",
+            "text": "Calcium result",
+            "description": "*"
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "Creatinine result",
+            "description": "*"
+          },
+          "gt0046": {
+            "id": "gt0046",
+            "text": "Set Anaemia to present"
+          },
+          "gt0047": {
+            "id": "gt0047",
+            "text": "CrCl result",
+            "description": "The value of the analyte result."
+          },
+          "gt0049": {
+            "id": "gt0049",
+            "text": "Plasmacytoma",
+            "description": "The index diagnosis"
+          },
+          "gt0050": {
+            "id": "gt0050",
+            "text": "Set Hypercalcaemia to present"
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "Calcium result",
+            "description": "*"
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "text": "Calcium result",
+            "description": "*"
+          },
+          "gt0053": {
+            "id": "gt0053",
+            "text": "Creatinine result",
+            "description": "*"
+          },
+          "gt0055": {
+            "id": "gt0055",
+            "text": "Bone lesions",
+            "description": "*"
+          },
+          "gt0056": {
+            "id": "gt0056",
+            "text": "Set Renal Ins. (by CrCl) to present"
+          },
+          "gt0057": {
+            "id": "gt0057",
+            "text": "Set osteolytic lesions >= 1"
+          },
+          "gt0058": {
+            "id": "gt0058",
+            "text": "Set Plasmacytoma to present"
+          },
+          "gt0060": {
+            "id": "gt0060",
+            "text": "Problem/Diagnosis name",
+            "description": "Identification of the problem or diagnosis, by name."
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "Diagnosis",
+            "description": "The index diagnosis"
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "text": "Severity",
+            "description": "An assessment of the overall severity of the problem or diagnosis."
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "Problem/Diagnosis name",
+            "description": "Identification of the problem or diagnosis, by name."
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "Plasmacytoma",
+            "description": ""
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "Set Plasmacytoma"
+          },
+          "gt0069": {
+            "id": "gt0069",
+            "text": "Test"
+          },
+          "gt0071": {
+            "id": "gt0071",
+            "text": "Diagnosis of Plasmacytoma",
+            "description": "*"
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "text": "Set Plasmacytoma presence"
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "text": "Assessment of plasma cells"
+          },
+          "gt0074": {
+            "id": "gt0074",
+            "text": "CRAB criteria assessment",
+            "description": ""
+          },
+          "gt0075": {
+            "id": "gt0075",
+            "text": "Set evidence of end ordan damage to present"
+          },
+          "gt0076": {
+            "id": "gt0076",
+            "text": "Plasma cell assessment",
+            "description": ""
+          },
+          "gt0077": {
+            "id": "gt0077",
+            "text": "Set PC/plasmacytoma status to complete"
+          },
+          "gt0078": {
+            "id": "gt0078",
+            "text": "Plasma cells and/or plasmacytoma",
+            "description": "*"
+          },
+          "gt0079": {
+            "id": "gt0079",
+            "text": "Evidence of end organ damage",
+            "description": "*"
+          },
+          "gt0080": {
+            "id": "gt0080",
+            "text": "Biomarkers of malignancy",
+            "description": "*"
+          },
+          "gt0081": {
+            "id": "gt0081",
+            "text": "Set clonal BM plasma cells to >=60%"
+          },
+          "gt0082": {
+            "id": "gt0082",
+            "text": "Multiple myeloma diagnosis"
+          },
+          "gt0083": {
+            "id": "gt0083",
+            "text": "Set bony plasmacytoma"
+          },
+          "gt0084": {
+            "id": "gt0084",
+            "text": "Set Multiple Myeloma diagnosis"
+          },
+          "gt0085": {
+            "id": "gt0085",
+            "text": "Biomarkers of malignancy assessment"
+          },
+          "gt0087": {
+            "id": "gt0087",
+            "text": "FLC ratio result",
+            "description": "The value of the analyte result."
+          },
+          "gt0088": {
+            "id": "gt0088",
+            "text": "Set FLC ratio >= 100"
+          },
+          "gt0089": {
+            "id": "gt0089",
+            "text": "Focal lesion on MRI studies >=1",
+            "description": "*"
+          },
+          "gt0090": {
+            "id": "gt0090",
+            "text": "Serum FLC ratio >= 100",
+            "description": "*"
+          },
+          "gt0091": {
+            "id": "gt0091",
+            "text": "Set FLC ratio"
+          },
+          "gt0092": {
+            "id": "gt0092",
+            "text": "MRI studies"
+          },
+          "gt0094": {
+            "id": "gt0094",
+            "text": "FLC ratio",
+            "description": "The name of the analyte result."
+          },
+          "gt0095": {
+            "id": "gt0095",
+            "text": "Set FLC ratio"
+          },
+          "gt0097": {
+            "id": "gt0097",
+            "text": "FLC ratio",
+            "description": "*"
+          },
+          "gt0098": {
+            "id": "gt0098",
+            "text": "Osteolytic lesions",
+            "description": "*"
+          },
+          "gt0100": {
+            "id": "gt0100",
+            "text": "FLs >= 5mm",
+            "description": "*"
+          },
+          "gt0101": {
+            "id": "gt0101",
+            "text": "FLs >= 5mm",
+            "description": "*"
+          },
+          "gt0102": {
+            "id": "gt0102",
+            "text": "Diagnosis of Plasmacytoma",
+            "description": "*"
+          },
+          "gt0103": {
+            "id": "gt0103",
+            "text": "Calcium",
+            "description": "*"
+          },
+          "gt0104": {
+            "id": "gt0104",
+            "text": "CrCl",
+            "description": "*"
+          },
+          "gt0105": {
+            "id": "gt0105",
+            "text": "Creatinine",
+            "description": "*"
+          },
+          "gt0106": {
+            "id": "gt0106",
+            "text": "Haemoglobin",
+            "description": "*"
+          },
+          "gt0107": {
+            "id": "gt0107",
+            "text": "Osteolytic lesions",
+            "description": "*"
+          },
+          "gt0108": {
+            "id": "gt0108",
+            "text": "Clonal BM plasma cells",
+            "description": "*"
+          },
+          "gt0109": {
+            "id": "gt0109",
+            "text": "Involved/uninvolved serum-FLC ratio",
+            "description": "*"
+          },
+          "gt0110": {
+            "id": "gt0110",
+            "text": "Focal lesions on MRI studies (size >= 5mm)",
+            "description": "*"
+          },
+          "gt0111": {
+            "id": "gt0111",
+            "text": "Set Renal Ins. (by creatinine) to present"
+          }
+        }
+      }
+    },
+    "term_bindings": {
+      "SNOMED": {
+        "id": "SNOMED",
+        "bindings": {
+          "gt0067": {
+            "codes": [
+              "SNOMED::123456"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

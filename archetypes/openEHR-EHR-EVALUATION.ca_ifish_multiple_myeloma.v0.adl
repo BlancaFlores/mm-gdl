@@ -1,0 +1,120 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-EVALUATION.ca_ifish_multiple_myeloma.v0
+
+concept
+	[at0000]	-- Ca ifish multiple myeloma
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"1BB31598DCBF4EA0DD7F055C4520C220">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- Ca ifish multiple myeloma
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- del(17p)
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003, 	-- present
+									at0004]	-- absent
+								}
+							}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {	-- t(4;14)
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0006, 	-- translocation
+									at0007]	-- no translocation
+								}
+							}
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {	-- t(14;16)
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0009, 	-- translocation
+									at0010]	-- no translocation
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Ca ifish multiple myeloma">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"del(17p)">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"present">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"absent">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"t(4;14)">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"translocation">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"no translocation">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"t(14;16)">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"translocation">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"no translocation">
+					description = <"*">
+				>
+			>
+		>
+	>

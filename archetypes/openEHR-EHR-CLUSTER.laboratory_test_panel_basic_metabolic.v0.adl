@@ -1,0 +1,366 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.laboratory_test_panel_basic_metabolic.v0
+
+concept
+	[at0000]	-- Laboratory test panel basic metabolic
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"2F79F360B90B65DC177667108F2F20A6">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Laboratory test panel basic metabolic
+		items cardinality matches {1..*; unordered} matches {
+			CLUSTER[at0001] occurrences matches {0..1} matches {	-- laboratory_test_analyte_albumin
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Analyte result sequence
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {	-- Albumin
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0010] occurrences matches {0..1} matches {	-- Albumin result
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::119]>
+								list = <
+									["1"] = <
+										units = <"gm/dl">
+										precision = <|3|>
+									>
+								>
+							>
+						}
+					}
+					allow_archetype CLUSTER[at0014] occurrences matches {0..*} matches {	-- Analyte result detail
+						include
+							archetype_id/value matches {/.*/}
+					}
+					ELEMENT[at0016] occurrences matches {0..1} matches {	-- Reference range guidance
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0019] occurrences matches {0..1} matches {	-- Validation time
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0022] occurrences matches {0..1} matches {	-- Result status
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0025] occurrences matches {0..1} matches {	-- Result status time
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0028] occurrences matches {0..1} matches {	-- Specimen
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0031] occurrences matches {0..1} matches {	-- Comment
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0003] occurrences matches {0..1} matches {	-- laboratory_test_analyte_calcium
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0004] occurrences matches {0..1} matches {	-- Analyte result sequence
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {	-- Calcium
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0011] occurrences matches {0..1} matches {	-- Calcium result
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::119]>
+								list = <
+									["1"] = <
+										units = <"mmol/l">
+										precision = <|3|>
+									>
+									["2"] = <
+										units = <"mg/dl">
+										precision = <|3|>
+									>
+								>
+							>
+						}
+					}
+					allow_archetype CLUSTER[at0013] occurrences matches {0..*} matches {	-- Analyte result detail
+						include
+							archetype_id/value matches {/.*/}
+					}
+					ELEMENT[at0017] occurrences matches {0..1} matches {	-- Reference range guidance
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0020] occurrences matches {0..1} matches {	-- Validation time
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0023] occurrences matches {0..1} matches {	-- Result status
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0026] occurrences matches {0..1} matches {	-- Result status time
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0029] occurrences matches {0..1} matches {	-- Specimen
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0032] occurrences matches {0..1} matches {	-- Comment
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0005] occurrences matches {0..1} matches {	-- laboratory_test_analyte_creatinine
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0006] occurrences matches {0..1} matches {	-- Analyte result sequence
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0009] occurrences matches {0..1} matches {	-- Creatinine
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0012] occurrences matches {0..1} matches {	-- Creatinine result
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::119]>
+								list = <
+									["1"] = <
+										units = <"mg/dl">
+										precision = <|3|>
+									>
+									["2"] = <
+										units = <"umol/l">
+										precision = <|3|>
+									>
+								>
+							>
+						}
+					}
+					allow_archetype CLUSTER[at0015] occurrences matches {0..*} matches {	-- Analyte result detail
+						include
+							archetype_id/value matches {/.*/}
+					}
+					ELEMENT[at0018] occurrences matches {0..1} matches {	-- Reference range guidance
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0021] occurrences matches {0..1} matches {	-- Validation time
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0024] occurrences matches {0..1} matches {	-- Result status
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0027] occurrences matches {0..1} matches {	-- Result status time
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0030] occurrences matches {0..1} matches {	-- Specimen
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0033] occurrences matches {0..1} matches {	-- Comment
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Laboratory test panel basic metabolic">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"laboratory_test_analyte_albumin">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"Analyte result sequence">
+					description = <"The intended position of this analyte result within the overall sequence of analyte results.">
+				>
+				["at0003"] = <
+					text = <"laboratory_test_analyte_calcium">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Analyte result sequence">
+					description = <"The intended position of this analyte result within the overall sequence of analyte results.">
+				>
+				["at0005"] = <
+					text = <"laboratory_test_analyte_creatinine">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Analyte result sequence">
+					description = <"The intended position of this analyte result within the overall sequence of analyte results.">
+				>
+				["at0007"] = <
+					text = <"Albumin">
+					description = <"The name of the analyte result.">
+				>
+				["at0008"] = <
+					text = <"Calcium">
+					description = <"The name of the analyte result.">
+				>
+				["at0009"] = <
+					text = <"Creatinine">
+					description = <"The name of the analyte result.">
+				>
+				["at0010"] = <
+					text = <"Albumin result">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Calcium result">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Creatinine result">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Analyte result detail">
+					description = <"Further detail regarding an individual result.">
+				>
+				["at0014"] = <
+					text = <"Analyte result detail">
+					description = <"Further detail regarding an individual result.">
+				>
+				["at0015"] = <
+					text = <"Analyte result detail">
+					description = <"Further detail regarding an individual result.">
+				>
+				["at0016"] = <
+					text = <"Reference range guidance">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Reference range guidance">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Reference range guidance">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Validation time">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Validation time">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Validation time">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Result status">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Result status">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Result status">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Result status time">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Result status time">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Result status time">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Specimen">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Specimen">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Specimen">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Comment">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Comment">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Comment">
+					description = <"*">
+				>
+			>
+		>
+	>
